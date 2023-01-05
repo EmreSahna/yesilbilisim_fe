@@ -4,10 +4,12 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Topnavbar from "./components/topnavbar";
 
 function App() {
   return (
     <Suspense fallback={<Spinner/>}>
+      <Topnavbar/>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,8 +1,8 @@
-import React from 'react'
+import DemoCarousel from "../../components/slider";
 
 function home() {
   return (
-    <div>home</div>
+    <DemoCarousel/>
   )
 }
 
