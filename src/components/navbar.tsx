@@ -5,12 +5,12 @@ function navbar() {
             <img src={require('../assets/logo.png')} className="w-[200px]" alt="yesilbilisim" />
         </div>
         <div className="flex items-center justify-center w-2/4">
-            <ul className="flex items-center justify-center w-full text-black font-semibold text-[13px]">
+            <ul className="flex items-center justify-center w-full text-black font-semibold text-[16px]">
                 <li className="mx-4 hover:bg-main-gray px-2 py-1.5 rounded-md">
-                    <a href="#">Anasayfa</a>
+                    <a href="/">Anasayfa</a>
                 </li>
                 <li className="mx-4 hover:bg-main-gray px-2 py-1.5 rounded-md">
-                    <a href="#">Hakkımızda</a>
+                    <a href="/about">Hakkımızda</a>
                 </li>
                 <li className="mx-4 hover:bg-main-gray px-2 py-1.5 rounded-md">
                     <a href="#">Ürünlerimiz</a>
@@ -24,11 +24,11 @@ function navbar() {
             </ul>
         </div>
         <div className="flex items-center ml-auto pr-4">
-            <ul className="text-white font-semibold text-[13px] ">
-              <li className="mx-4 bg-main-blue px-5 py-2 rounded-lg">
-                  <a href="#" className="">İletişime Geç</a>
-              </li>
-            </ul>
+            <button className="text-white font-semibold text-[14px] bg-main-blue rounded-lg px-5 py-2 mx-4 ">
+                <a href="#" className="">
+                    İletişime Geç
+                </a>
+            </button>
         </div>
     </nav>
   )

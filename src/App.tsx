@@ -5,6 +5,8 @@ import Navbar from "./components/navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Topnavbar from "./components/topnavbar";
+import Footer from "./components/footer";
+import Copyright from "./components/copyright";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         {/* <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
+      <Footer/>
+      <Copyright/>
     </Suspense>
   );
 }

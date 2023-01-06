@@ -1,8 +1,14 @@
+import Hizmetlerimiz from "../../components/hizmetlerimiz";
+import Sectionis from "../../components/sectionis";
 import DemoCarousel from "../../components/slider";
 
 function home() {
   return (
-    <DemoCarousel/>
+    <div>
+      <DemoCarousel/>
+      <Sectionis/>
+      <Hizmetlerimiz/>
+    </div>
   )
 }
 
