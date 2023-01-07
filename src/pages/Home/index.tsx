@@ -1,6 +1,19 @@
+import { useEffect, useState } from "react";
 import DemoCarousel from "./components/slider";
+import { getLogos } from "./hooks/get_logos";
+import { IImage } from "./model";
 
-function home() {
+const Home = () => {
+  const [images, setImages] = useState([] as IImage[]);
+
+  useEffect(() => {
+    getLogos().then((res) => {
+      setImages(res as IImage[]);
+    });
+  }, []);
+
+  console.log(images);  
+
   return (
     <div>
       <DemoCarousel/>
@@ -42,4 +55,4 @@ function home() {
   )
 }
 
-export default home;
+export default Home;
