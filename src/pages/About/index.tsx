@@ -3,7 +3,7 @@ function about() {
     <div>
       <div className="h-auto bg-main-blue flex justify-center py-12 flex-col items-center">
         <div className="h-auto w-[200px]">
-          <img src={require('../../assets/logo_2.png')} alt="" />
+          <img src="http://localhost:8080/img/logo_2.png" alt="" />
         </div>
         <ul className="my-8">
           <li className="h-[16px] w-[16px] bg-black rounded-full mx-2 inline-block"/>
@@ -22,10 +22,10 @@ function about() {
             Bireysel ve Kurumsal müşterilerimize en hızlı şekilde hizmet sağlamak ve Müşteri memnuniyetini en yüksek seviyede tutmayı amaçlayan yeşil bilişim günlük hayatınızı kolaylaştırmak ve teknolojiye yaptığımız yatırımdan en yüksek verimi almak için çalışıyoruz.
           </p>
         </div>
-        <img src={require('../../assets/photos/about_1.jpg')} className="rounded-lg h-[200px] mx-8" alt="" />
+        <img src="http://localhost:8080/img/about/about_1.jpg" className="rounded-lg h-[200px] mx-8" alt="" />
       </div>
       <div className="flex justify-center my-12">
-        <img src={require('../../assets/photos/about_2.jpg')} className="rounded-lg h-[200px] mx-8" alt="" />
+        <img src="http://localhost:8080/img/about/about_2.jpg" className="rounded-lg h-[200px] mx-8" alt="" />
         <div className="mx-8">
           <div className="flex flex-col text-[36px] font-bold">
             <span className="text-black">Hızlı & Uzaktan </span>
@@ -45,7 +45,7 @@ function about() {
             Tedarik zincirinin en önemli parçası olan sipariş sonrası kargo süreçlrini en hızlı şekilde gerçekleştirmek ve Mutlu Müşteri profili oluşturmayı amaçlıyoruz.  
           </p>
         </div>
-        <img src={require('../../assets/photos/about_3.jpg')} className="rounded-lg h-[200px] mx-8" alt="" />
+        <img src="http://localhost:8080/img/about/about_3.jpg" className="rounded-lg h-[200px] mx-8" alt="" />
       </div>
     </div>
   )

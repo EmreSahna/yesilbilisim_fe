@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: arrow_font;
-    src: url(../src/assets/fonts/arrow_7.ttf);
+    src: url(http://localhost:8080/img/fonts/arrow_7.ttf);
 }
 
 * {

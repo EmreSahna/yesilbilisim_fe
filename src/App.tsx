@@ -1,12 +1,14 @@
 import { Suspense } from "react";
-import Spinner from "./components/spinner";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Topnavbar from "./components/topnavbar";
-import Footer from "./components/footer";
-import Copyright from "./components/copyright";
+
+import Topnavbar from "./common/topnavbar";
+import Navbar from "./common/navbar";
+import Spinner from "./common/spinner";
+import Footer from "./common/footer";
+import Copyright from "./common/copyright";
 
 function App() {
   return (
