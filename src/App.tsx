@@ -9,6 +9,7 @@ import Navbar from "./common/navbar";
 import Spinner from "./common/spinner";
 import Footer from "./common/footer";
 import Copyright from "./common/copyright";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -17,9 +18,14 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {/* <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} /> */}
+        <Route path="/hakkimizda" element={<About />} />
+        <Route path="/iletisim" element={<Contact/>} />
+        {/* 
+        <Route path="*" element={<NotFound />} /> 
+        <Route path="urunler" element={<Products />} />
+        <Route path="hizmetler" element={<Services />} />
+        <Route path="blog" element={<Blog />} />
+        */}
       </Routes>
       <Footer/>
       <Copyright/>

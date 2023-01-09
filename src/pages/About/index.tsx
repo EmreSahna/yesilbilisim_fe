@@ -3,7 +3,7 @@ function about() {
     <div>
       <div className="h-auto bg-main-blue flex justify-center py-12 flex-col items-center">
         <div className="h-auto w-[200px]">
-          <img src="http://localhost:8080/img/logo_2.png" alt="" />
+          <img src="http://localhost:8080/img/logo/logo_2.png" alt="" />
         </div>
         <ul className="my-8">
           <li className="h-[16px] w-[16px] bg-black rounded-full mx-2 inline-block"/>

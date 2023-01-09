@@ -12,7 +12,8 @@ module.exports = {
         'main-blue': '#0870B0',
         'main-gray': '#E8E8E8',
         'main-gray-2': '#BFBFBF',
-        'main-black': '#242429'
+        'main-black': '#242429',
+        'main-gray-3': '#606060'
       },
     },
   },

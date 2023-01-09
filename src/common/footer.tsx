@@ -58,7 +58,9 @@ export default function footer() {
                             </li>
                         </ul>
                         <div className="relative w-[300px] top-6 -left-16">
-                            <img src="http://localhost:8080/img/logo.png" style={{ position: 'absolute' }} alt="" />
+                            <a href="/">
+                                <img src="http://localhost:8080/img/logo/logo.png" style={{ position: 'absolute' }} alt="" />
+                            </a>
                         </div>
                     </div>
                 </div>
