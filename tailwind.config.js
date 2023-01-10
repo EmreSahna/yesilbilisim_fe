@@ -8,6 +8,9 @@ module.exports = {
       'arrow': ['arrow_font'],
     },
     extend: {
+      boxShadow: {
+        'card': '0px 0px 5px rgba(0, 0, 0, 0.25)',
+      },
       colors: {
         'main-blue': '#0870B0',
         'main-gray': '#E8E8E8',

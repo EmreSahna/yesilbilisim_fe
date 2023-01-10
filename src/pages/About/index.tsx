@@ -1,4 +1,4 @@
-function about() {
+const About = () => {
   return (
     <div>
       <div className="h-auto bg-main-blue flex justify-center py-12 flex-col items-center">
@@ -51,4 +51,4 @@ function about() {
   )
 }
 
-export default about;
+export default About;
