@@ -103,8 +103,8 @@ const Home = () => {
         <p className="font-normal text-[14px] w-10/12 mx-auto">Bu hizmetlerimizin yanı sıra, müşterilerimize özel olarak tasarlanmış paketler de sunmaktayız. Böylece, müşterilerimizin ihtiyaçlarına en uygun hizmetleri sunarak, onların işlemlerini daha da kolaylaştırırız. Eğer siz de en iyi hizmetleri arıyorsanız, şirketimiz ile iletişime geçebilir ve özel hizmetlerimizden yararlanabilirsiniz.</p>
         <div className="flex justify-center my-2">
           <button className="flex items-center bg-main-blue text-white py-1 px-4 rounded-[10px]" type="button">
-            <a href="/iletisim" className="flex items-center">
-            <span className="text-[16px] font-semibold">İletişime Geç</span>
+            <a href="/hizmetler" className="flex items-center">
+            <span className="text-[16px] font-semibold">Hizmetlerimizi İncele</span>
             <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[20px] ml-2 mt-1">¥</i>
             </a>
           </button>

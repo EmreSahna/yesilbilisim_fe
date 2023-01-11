@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Services from "./pages/Services";
 
 import Topnavbar from "./common/topnavbar";
 import Navbar from "./common/navbar";
@@ -22,9 +23,9 @@ function App() {
         <Route path="/hakkimizda" element={<About />} />
         <Route path="/iletisim" element={<Contact/>} />
         <Route path="*" element={<NotFound />} /> 
+        <Route path="hizmetler" element={<Services />} />
         {/* 
         <Route path="urunler" element={<Products />} />
-        <Route path="hizmetler" element={<Services />} />
         <Route path="blog" element={<Blog />} />
         <Route path="admin" element={<Admin />} />
         */}
