@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <DemoCarousel/>
-      <div className="my-8">
+      <div className="my-12">
         <h1 className="font-bold text-[36px] justify-center flex">İş Ortaklarımız</h1>
         <div className="flex items-center justify-center mt-4">
             <ul className="flex items-center">
@@ -33,7 +33,7 @@ const Home = () => {
             </ul>
         </div>
       </div>
-      <div className="my-8">
+      <div className="my-12">
         <h1 className="font-bold text-[36px] justify-center flex">Hizmetlerimiz</h1>
         <p className="font-normal text-[14px] justify-center flex"><span className="text-main-blue">Yesilbilisim</span>, müşterilerine geniş bir hizmet yelpazesi sunmaktadır.</p>
         <section className="flex justify-center my-4 text-center">
@@ -110,7 +110,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="my-8">
+      <div className="my-12">
         <h1 className="font-bold text-[36px] justify-center flex">Ürünlerimiz</h1>
         <p className="font-normal text-[14px] justify-center flex"><span className="text-main-blue">Yesilbilisim</span>, sizlere en kaliteli ürünleri sunmayı hedeflemektedir.</p>
         <section className="flex justify-center my-4">
@@ -135,11 +135,59 @@ const Home = () => {
             <p className="text-black text-[22px] font-bold mt-2 mx-3">13.999,00TL</p>
           </div>
         </section>
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
           <p className="text-[14px] w-6/12 text-center">Müşterilerimize en iyi hizmeti vermeyi amaçlıyoruz ve onların ihtiyaçlarını karşılamaya çalışıyoruz. Lütfen bizimle iletişime geçin ve kaliteli ürünlerimizi keşfedin.</p>
           <button className="flex items-center bg-main-black text-white py-1 px-4 rounded-[10px]" type="button">
-            <a href="/iletisim" className="flex items-center">
+            <a href="/urunler" className="flex items-center">
             <span className="text-[16px] font-semibold">Daha Fazla Ürün Göster</span>
+            <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[20px] ml-2 mt-1">¥</i>
+            </a>
+          </button>
+        </div>
+      </div>
+      <div className="bg-main-gray flex justify-center p-12 my-12">
+        <div className="text-left w-[500px]">
+          <h1 className="font-bold text-[36px]"><span className="text-main-blue">7/24&nbsp;</span>Destek Hattı</h1>
+          <p className="text-[14px] justify-center flex w-11/12">Müşterilerimize her zaman en iyi hizmeti vermeyi amaçlıyoruz ve bu nedenle sizler için 7/24 açık olan destek hattımızı kurduk. Site üzerinden bize ulaşarak, sorunlarınızı çözebilecek profesyonel ekibimizle iletişim kurabilirsiniz. Önemli olan sizlerin memnuniyeti ve bu nedenle 7/24 hizmet vermeyi sürdüreceğiz.</p>
+          <button className="flex items-center bg-main-blue text-white py-1 px-4 rounded-[10px] mt-6" type="button">
+            <a href="/iletisim" className="flex items-center">
+            <span className="text-[16px] font-semibold">Destek Al</span>
+            <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[20px] ml-2 mt-1">¥</i>
+            </a>
+          </button>
+        </div>
+        <img src="destek_1.jpg" className="rounded-lg w-[350px]" alt="" />
+      </div>
+      <div className="my-12">
+        <h1 className="font-bold text-[36px] justify-center flex">Blog'da Okumaya Değer</h1>
+        <p className="text-center w-6/12 text-[14px] mx-auto"><span className="text-main-blue">Yesilbilisim&nbsp;</span>olarak sizlere en yeni ve ilgi çekici blog yazılarımızı sunuyoruz. Bu bölümde, yazılım gibi konuları ele alan yazılarımızı bulabilirsiniz.</p>
+        <section className="flex justify-center my-4">
+          <div className="w-[275px] shadow-card rounded-lg bg-white mx-2 py-2.5">
+            <div className="bg-white w-[255px] h-[160px] rounded-lg flex justify-center items-center m-auto bg-[url('../public/medium_1.webp')] bg-contain bg-no-repeat bg-center"></div>
+            <p className="text-black text-[18px] font-bold mt-2 mx-3">Java Reflection Nedir ?</p>
+            <p className="text-black text-[14px] my-2 mx-3">Reflection; classları, metodları, interfaceleri, fieldları, vb. özellikleri programı...</p>
+          </div>
+          <div className="w-[275px] shadow-card rounded-lg bg-white mx-2 py-2.5">
+            <div className="bg-white w-[255px] h-[160px] rounded-lg flex justify-center items-center m-auto bg-[url('../public/medium_1.webp')] bg-contain bg-no-repeat bg-center"></div>
+            <p className="text-black text-[18px] font-bold mt-2 mx-3">Java Reflection Nedir ?</p>
+            <p className="text-black text-[14px] my-2 mx-3">Reflection; classları, metodları, interfaceleri, fieldları, vb. özellikleri programı...</p>
+          </div>
+          <div className="w-[275px] shadow-card rounded-lg bg-white mx-2 py-2.5">
+            <div className="bg-white w-[255px] h-[160px] rounded-lg flex justify-center items-center m-auto bg-[url('../public/medium_1.webp')] bg-contain bg-no-repeat bg-center"></div>
+            <p className="text-black text-[18px] font-bold mt-2 mx-3">Java Reflection Nedir ?</p>
+            <p className="text-black text-[14px] my-2 mx-3">Reflection; classları, metodları, interfaceleri, fieldları, vb. özellikleri programı...</p>
+          </div>
+          <div className="w-[275px] shadow-card rounded-lg bg-white mx-2 py-2.5">
+            <div className="bg-white w-[255px] h-[160px] rounded-lg flex justify-center items-center m-auto bg-[url('../public/medium_1.webp')] bg-contain bg-no-repeat bg-center"></div>
+            <p className="text-black text-[18px] font-bold mt-2 mx-3">Java Reflection Nedir ?</p>
+            <p className="text-black text-[14px] my-2 mx-3">Reflection; classları, metodları, interfaceleri, fieldları, vb. özellikleri programı...</p>
+          </div>
+        </section>
+        <div className="flex justify-center items-center">
+          <p className="text-[14px] w-6/12 text-center mx-4"><span className="text-main-blue">Yesilbilisim&nbsp;</span>olarak, müşterilerimize faydalı bilgiler sunmayı hedefliyoruz ve onların ihtiyaçlarını karşılamaya çalışıyoruz. Blog yazılarımızı okumaya devam edin ve <span className="text-main-blue">Yesilbilisim</span> ile ilgili daha fazla bilgi edinin.</p>
+          <button className="mx-4 flex items-center bg-main-black text-white py-1 px-4 rounded-[10px]" type="button">
+            <a href="/blog" className="flex items-center">
+            <span className="text-[16px] font-semibold">Diğer Blog Yazıları</span>
             <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[20px] ml-2 mt-1">¥</i>
             </a>
           </button>

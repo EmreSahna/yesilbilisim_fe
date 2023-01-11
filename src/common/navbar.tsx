@@ -15,13 +15,13 @@ function navbar() {
                     <a href="/hakkimizda">Hakkımızda</a>
                 </li>
                 <li className="mx-4 hover:bg-main-gray px-2 py-1.5 rounded-md">
-                    <a href="#">Ürünlerimiz</a>
+                    <a href="/urunler">Ürünlerimiz</a>
                 </li>
                 <li className="mx-4 hover:bg-main-gray px-2 py-1.5 rounded-md">
-                    <a href="#">Blog</a>
+                    <a href="/blog">Blog</a>
                 </li>
                 <li className="mx-4 hover:bg-main-gray px-2 py-1.5 rounded-md">
-                    <a href="#">Çözümlerimiz</a>
+                    <a href="/hizmetler">Çözümlerimiz</a>
                 </li>
             </ul>
         </div>
