@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <DemoCarousel/>
-      <div className="my-12">
+      <div className="my-12" id="is">
         <h1 className="font-bold text-[36px] justify-center flex">İş Ortaklarımız</h1>
         <div className="flex items-center justify-center mt-4">
             <ul className="flex items-center">

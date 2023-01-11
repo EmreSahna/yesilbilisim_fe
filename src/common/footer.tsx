@@ -8,23 +8,23 @@ export default function footer() {
                         <ul className="list-none mb-0">
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">Anasayfa</a>
+                                <a href="/" className="mx-2 text-sm">Anasayfa</a>
                             </li>
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">Hakkımızda</a>
+                                <a href="/hakkimizda" className="mx-2 text-sm">Hakkımızda</a>
                             </li>
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">Ürünlerimiz</a>
+                                <a href="/urunler" className="mx-2 text-sm">Ürünlerimiz</a>
                             </li>
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">Blog</a>
+                                <a href="/blog" className="mx-2 text-sm">Blog</a>
                             </li>
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">Çözümlerimiz</a>
+                                <a href="/hizmetler" className="mx-2 text-sm">Çözümlerimiz</a>
                             </li>
                         </ul>
                     </div>
@@ -33,15 +33,15 @@ export default function footer() {
                         <ul className="list-none mb-0">
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">İletişim</a>
+                                <a href="/iletisim" className="mx-2 text-sm">İletişim</a>
                             </li>
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">İş Ortaklarımız</a>
+                                <a href="#is" className="mx-2 text-sm">İş Ortaklarımız</a>
                             </li>
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">Q&A</a>
+                                <a href="/hakkimizda" className="mx-2 text-sm">Q&A</a>
                             </li>
                         </ul>
                     </div>
@@ -50,11 +50,11 @@ export default function footer() {
                         <ul className="list-none mb-0">
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">info@yesilbilisim.net</a>
+                                <p className="mx-2 text-sm">info@yesilbilisim.net</p>
                             </li>
                             <li className="flex items-center">
                                 <i className="font-arrow not-italic rotate-90 inline-block text-main-blue text-[22px]">¦</i>
-                                <a href="#!" className="mx-2 text-sm">0 (541) 800 7294</a>
+                                <p className="mx-2 text-sm">0 (541) 800 7294</p>
                             </li>
                         </ul>
                         <div className="relative w-[300px] top-6 -left-16">
@@ -66,7 +66,7 @@ export default function footer() {
                 </div>
             </div>
             <div className="justify-center flex">
-                <span className="text-white text-sm">Yesil Bilişim, Bireysel ve kurumsal şirketlerin bilişim ihtiyaçlarını karşılayan güvenilir bir çözüm ortağıdır.</span>
+                <span className="text-white text-sm">Yeşil Bilişim, Bireysel ve kurumsal şirketlerin bilişim ihtiyaçlarını karşılayan güvenilir bir çözüm ortağıdır.</span>
             </div>
         </footer>
     )

@@ -16,7 +16,7 @@ const Contact = () => {
                 </div>
                 <div className="mb-4">
                     <label className="block text-main-gray-3 text-sm font-semibold mb-2">
-                        Şirket İsmi *
+                        Şirket İsmi
                     </label>
                     <input className="appearance-none border rounded-md w-full py-3 px-3 text-main-gray-3 leading-tight focus:outline-none" type="text" placeholder="örn. Yesilbilisim" />
                 </div>

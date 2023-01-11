@@ -15,7 +15,7 @@ import Copyright from "./common/copyright";
 function App() {
   return (
     <Suspense fallback={<Spinner/>}>
-      <Topnavbar/>
+      {/* <Topnavbar/> */}
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
