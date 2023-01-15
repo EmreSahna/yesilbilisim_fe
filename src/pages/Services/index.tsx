@@ -1,16 +1,14 @@
 const Services = () => {
     return (
         <div>
-            <div className="h-auto bg-main-blue flex justify-center py-12 flex-col items-center">
-                <div className="h-auto w-[200px]">
-                    <img src="http://localhost:8080/img/logo/logo_2.png" alt="" />
-                </div>
-                <ul className="my-8">
-                    <li className="h-[16px] w-[16px] bg-black rounded-full mx-2 inline-block"/>
-                    <li className="h-[16px] w-[16px] bg-black rounded-full mx-2 inline-block"/>
-                    <li className="h-[16px] w-[16px] bg-black rounded-full mx-2 inline-block"/>
+            <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">
+                <img src="http://localhost:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
+                <ul className="my-4">
+                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
+                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
+                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
                 </ul>
-                <p className="text-white font-bold text-[36px]">Çözümlerimiz</p>
+                <p className="text-white font-bold text-[28px]">Çözümlerimiz</p>
             </div>
             <div className="my-8">
                 <div className="bg-main-gray w-10/12 flex text-center justify-center mx-auto items-center gap-16 p-12 my-12">

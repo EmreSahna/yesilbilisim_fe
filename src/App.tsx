@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Services from "./pages/Services";
+import Products from "./pages/Products";
+import Blog from "./pages/Blog";
 
 import Topnavbar from "./common/topnavbar";
 import Navbar from "./common/navbar";
@@ -24,9 +26,9 @@ function App() {
         <Route path="/iletisim" element={<Contact/>} />
         <Route path="*" element={<NotFound />} /> 
         <Route path="hizmetler" element={<Services />} />
-        {/* 
         <Route path="urunler" element={<Products />} />
         <Route path="blog" element={<Blog />} />
+        {/* 
         <Route path="admin" element={<Admin />} />
         */}
       </Routes>

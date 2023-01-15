@@ -2,7 +2,7 @@ function navbar(this: any) {
     return (
     <nav className="bg-white flex h-16 w-full items-center">
         <a href="/" className="mr-auto my-3 ml-5">
-            <img src="http://localhost:8080/img/logo/logo.png" className="w-[200px] mx-auto" alt="yesilbilisim" />
+            <img src="http://localhost:8080/img/logo/logo.png" className="h-12 mx-auto" alt="yesilbilisim" />
         </a>
         <div className="hidden lg:flex items-center justify-center">
             <ul className="flex items-center justify-center w-full text-black font-semibold text-[16px]">
