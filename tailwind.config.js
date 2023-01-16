@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       boxShadow: {
         'card': '0px 0px 5px rgba(0, 0, 0, 0.25)',
+        'product': '0 0 30px rgba(0, 0, 0, .04)',
       },
       colors: {
         'main-blue': '#0870B0',
