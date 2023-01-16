@@ -17,11 +17,6 @@ const Products = () => {
                     </div>
                     <hr />
                     <div className="px-4 my-4 text-left">
-                        <p className="font-semibold ml-1 mb-2">Ürün Ara</p>
-                        <input className="border-2 focus:border-main-blue border-main-gray-2 rounded-md appearance-none focus:outline-none leading-tight p-1" type="text" placeholder="Macbook Pro..."/>
-                    </div>
-                    <hr />
-                    <div className="px-4 my-4 text-left">
                         <p className="font-semibold mb-2">Filtrele</p>
                         <div className="border-2 border-main-blue rounded-md mb-4">
                             <p className="font-semibold ml-2 mt-2 mb-2">Kategori</p>
