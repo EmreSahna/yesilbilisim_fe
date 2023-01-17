@@ -5,32 +5,32 @@ const Home = () => {
   return (
     <div>
       <DemoCarousel/>
-      <div className="my-12" id="is">
-        <h1 className="font-bold text-[36px] justify-center flex">İş Ortaklarımız</h1>
-        <div className="flex items-center justify-center mt-4">
-            <ul className="flex items-center">
-                <li className="mx-6">
-                    <img src="http://localhost:8080/img/companies/cisco.png" className='h-[50px] w-auto' alt="" />
-                </li>
-                <li className="mx-6">
-                    <img src="http://localhost:8080/img/companies/trendmicro.png" className='h-[65px] w-auto' alt="" />
-                </li>
-                <li className="mx-6">
-                    <img src="http://localhost:8080/img/companies/microsoft.png" className='h-[65px] w-auto' alt="" />
-                </li>
-                <li className="mx-6">
-                    <img src="http://localhost:8080/img/companies/mcafee.png" className='h-[20px] w-auto' alt="" />
-                </li>
-                <li className="mx-6">
-                    <img src="http://localhost:8080/img/companies/lenovo.png" className='h-[20px] w-auto' alt="" />
-                </li>
-                <li className="mx-6">
-                    <img src="http://localhost:8080/img/companies/huawei.png" className='h-[50px] w-auto' alt="" />
-                </li>
-                <li className="mx-6">
-                    <img src="http://localhost:8080/img/companies/ibm.png" className='h-[25px] w-auto' alt="" />
-                </li>
-            </ul>
+      <div className="lg:my-12 my-6" id="is">
+        <h1 className="font-bold lg:text-[36px] text-[24px] justify-center flex">İş Ortaklarımız</h1>
+        <div className="flex items-center justify-center mt-1">
+          <ul className="flex items-center justify-center flex-wrap">
+            <li className="lg:w-[12%] lg:p-5 p-3 w-[25%]">
+              <img src="http://localhost:8080/img/companies/cisco.png" alt="" />
+            </li>
+            <li className="lg:w-[12%] lg:p-5 p-3 w-[25%]">
+              <img src="http://localhost:8080/img/companies/trendmicro.png" alt="" />
+            </li>
+            <li className="lg:w-[12%] lg:p-5 p-3 w-[25%]">
+              <img src="http://localhost:8080/img/companies/microsoft.png" alt="" />
+            </li>
+            <li className="lg:w-[12%] lg:p-5 p-3 w-[25%]">
+              <img src="http://localhost:8080/img/companies/mcafee.png" alt="" />
+            </li>
+            <li className="lg:w-[12%] lg:p-5 p-3 w-[25%]">
+              <img src="http://localhost:8080/img/companies/lenovo.png" alt="" />
+            </li>
+            <li className="lg:w-[12%] lg:p-5 p-3 w-[25%]">
+              <img src="http://localhost:8080/img/companies/huawei.png" alt="" />
+            </li>
+            <li className="lg:w-[12%] lg:p-5 p-3 w-[25%]">
+              <img src="http://localhost:8080/img/companies/ibm.png" alt="" />
+            </li>
+          </ul>
         </div>
       </div>
       <div className="my-12">
