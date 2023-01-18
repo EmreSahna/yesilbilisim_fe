@@ -134,7 +134,7 @@ const Home = () => {
             </a>
           </button>
         </div>
-        <img src="destek_1.jpg" className="h-auto w-[500px]" alt="" />
+        <img src="destek.jpg" className="h-auto w-[500px]" alt="" />
       </div>
       
       <div className="bg-main-gray flex md:flex-row flex-col justify-center my-12 lg:px-12 lg:py-0 py-6 gap-8">
