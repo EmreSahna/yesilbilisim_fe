@@ -1,5 +1,10 @@
-export default interface IImage {
+export interface IImage {
     id: string;
-    name: string;
-    path: string;
+    filename: string;
+    folder: string;
+}
+
+export interface IDescriptionalImage extends IImage {
+    title: string;
+    description: string;
 }

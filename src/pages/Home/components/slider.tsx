@@ -1,7 +1,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import HomeService from '../HomeService';
-import IImage from "../types";
+import { IImage } from "../types";
 import { useEffect, useState } from "react";
 
 const DemoCarousel = () => {
@@ -9,7 +9,7 @@ const DemoCarousel = () => {
   const [slider, setSlider] = useState<IImage[]>([]);
 
   useEffect(() => {
-    HomeService.getAll().then((res) => {
+    HomeService.getSlider().then((res) => {
       setSlider(res.data);
     });
   }, [])
@@ -23,15 +23,15 @@ const DemoCarousel = () => {
       interval={6000}
       renderArrowNext={(onClickHandler, hasNext) =>
         hasNext && (
-          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_84px)] z-10 absolute right-1'>
-            <i className="font-arrow not-italic rotate-90 inline-block opacity-50 text-[84px] ">¦</i>
+          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute right-1'>
+            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_forward_ios</i>
           </button>
         )
       }
       renderArrowPrev={(onClickHandler, hasPrev) =>
         hasPrev && (
-          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_84px)] z-10 absolute left-1'>
-            <i className="font-arrow not-italic -rotate-90 inline-block opacity-50 text-[84px] ">¦</i>
+          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute left-1'>
+            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_back_ios</i>
           </button>
         )
       }
@@ -58,7 +58,7 @@ const DemoCarousel = () => {
         slider.map((item, index) => {
           return (
             <div key={index}>
-              <img src={`http://192.168.1.169:8080/img/${item.path}`} alt="" />
+              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
             </div>
         )})
       }

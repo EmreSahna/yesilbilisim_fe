@@ -1,12 +1,17 @@
 import http from "../../http-common";
-import IImage from "./types";
+import { IDescriptionalImage, IImage } from "./types";
 
-const getAll = () => {
-    return http.get<IImage[]>('/image/logos');
+const getSlider = () => {
+    return http.get<IImage[]>('/image/slider');
+};
+
+const getHomepage = () => {
+    return http.get<(IDescriptionalImage)[]>('/image/homepage');
 };
 
 const HomeService = {
-    getAll
+    getSlider,
+    getHomepage
 };
   
 export default HomeService;
