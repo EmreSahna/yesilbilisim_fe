@@ -8,6 +8,10 @@ module.exports = {
       'arrow': ['arrow_font'],
     },
     extend: {
+      screens: {
+        'small': '574px',
+        'med': '852px',
+      },
       boxShadow: {
         'card': '0px 0px 5px rgba(0, 0, 0, 0.25)',
         'product': '0 0 30px rgba(0, 0, 0, .04)',
