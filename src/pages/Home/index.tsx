@@ -48,24 +48,26 @@ const Home = () => {
       </div>
       <div className="my-12">
         <h1 className="font-bold text-[36px] justify-center flex">Hizmetlerimiz</h1>
-        <p className="font-normal text-[14px] justify-center flex"><span className="text-main-blue">Yesilbilisim</span>, müşterilerine geniş bir hizmet yelpazesi sunmaktadır.</p>
-        <section className="flex justify-center my-4 text-center flex-wrap">
+        <p className="font-normal text-[14px] text-center"><span className="text-main-blue">Yesilbilisim</span>, müşterilerine geniş bir hizmet yelpazesi sunmaktadır.</p>
+        <section className="flex my-4 mx-auto text-center flex-wrap max-w-[1170px]">
           {images &&
               images.map((item, index) => {
               if(item.folder === 'services'){
                 return (
-                  <div className="w-[220px] h-[160px] shadow-card rounded-lg bg-white mx-2 py-4">
-                    <div className="bg-main-blue w-[80px] h-[80px] rounded-lg flex justify-center items-center m-auto">
-                      <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} className="w-[60px] invert" alt="" />
+                  <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12">
+                    <div className="shadow-card rounded-lg bg-white h-full pt-4">
+                      <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                        <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} className="w-full invert" alt="" />
+                      </div>
+                      <p className="text-black text-[20px] font-bold mt-1 mx-3">{item.title}</p>
                     </div>
-                    <p className="text-black text-[1.25vw] font-bold mt-1 mx-3">{item.title}</p>
                   </div>
                 )
               }
             })
           }
         </section>
-        <p className="font-normal text-[14px] w-10/12 mx-auto">Bu hizmetlerimizin yanı sıra, müşterilerimize özel olarak tasarlanmış paketler de sunmaktayız. Böylece, müşterilerimizin ihtiyaçlarına en uygun hizmetleri sunarak, onların işlemlerini daha da kolaylaştırırız. Eğer siz de en iyi hizmetleri arıyorsanız, şirketimiz ile iletişime geçebilir ve özel hizmetlerimizden yararlanabilirsiniz.</p>
+        <p className="font-normal text-[14px] max-w-[1170px] mx-auto text-center">Bu hizmetlerimizin yanı sıra, müşterilerimize özel olarak tasarlanmış paketler de sunmaktayız. Böylece, müşterilerimizin ihtiyaçlarına en uygun hizmetleri sunarak, onların işlemlerini daha da kolaylaştırırız. Eğer siz de en iyi hizmetleri arıyorsanız, şirketimiz ile iletişime geçebilir ve özel hizmetlerimizden yararlanabilirsiniz.</p>
         <div className="flex justify-center my-2">
           <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px]" type="button">
             <a href="/hizmetler" className="flex items-center">
