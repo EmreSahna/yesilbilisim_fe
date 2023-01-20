@@ -4,7 +4,10 @@ export interface IImage {
     folder: string;
 }
 
-export interface IDescriptionalImage extends IImage {
+export interface ITitledImage extends IImage {
     title: string;
+}
+
+export interface IDescriptionalImage extends ITitledImage {
     description: string;
 }

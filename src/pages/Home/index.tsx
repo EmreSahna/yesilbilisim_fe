@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import DemoCarousel from "./components/slider";
 import HomeService from "./HomeService";
-import { IDescriptionalImage, IImage } from "./types";
+import { ITitledImage } from "./types";
 
 const Home = () => {
-  const [images, setImages] = useState<(IDescriptionalImage)[]>([]);
+  const [images, setImages] = useState<(ITitledImage)[]>([]);
 
   useEffect(() => {
     HomeService.getHomepage().then((res) => {
@@ -57,7 +57,7 @@ const Home = () => {
                   <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12">
                     <div className="shadow-card rounded-lg bg-white h-full pt-4">
                       <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
-                        <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} className="w-full invert" alt="" />
+                        <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} className="w-full invert" alt="" />
                       </div>
                       <p className="text-black text-[20px] font-bold mt-1 mx-3">{item.title}</p>
                     </div>
