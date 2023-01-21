@@ -1,19 +1,13 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import HomeService from '../HomeService';
 import { IImage } from "../types";
-import { useEffect, useState } from "react";
 
-const DemoCarousel = () => {
+interface IProps {
+  slider: IImage[];
+}
 
-  const [slider, setSlider] = useState<IImage[]>([]);
-
-  useEffect(() => {
-    HomeService.getSlider().then((res) => {
-      setSlider(res.data);
-    });
-  }, [])
-
+const DemoCarousel = ({slider} : IProps) => {
+  
   return (
     <Carousel 
       showThumbs={false} 
@@ -21,20 +15,7 @@ const DemoCarousel = () => {
       infiniteLoop={true} 
       autoPlay={true} 
       interval={6000}
-      renderArrowNext={(onClickHandler, hasNext) =>
-        hasNext && (
-          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute right-1'>
-            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_forward_ios</i>
-          </button>
-        )
-      }
-      renderArrowPrev={(onClickHandler, hasPrev) =>
-        hasPrev && (
-          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute left-1'>
-            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_back_ios</i>
-          </button>
-        )
-      }
+      showArrows={false}
       renderIndicator={(onClickHandler, isSelected, index) => {
         if (isSelected) {
             return (
@@ -58,7 +39,7 @@ const DemoCarousel = () => {
         slider.map((item, index) => {
           return (
             <div key={index}>
-              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
+              <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} alt="" />
             </div>
         )})
       }
@@ -67,3 +48,21 @@ const DemoCarousel = () => {
 }
 
 export default DemoCarousel;
+
+/*
+
+      renderArrowNext={(onClickHandler, hasNext) =>
+        hasNext && (
+          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute right-1'>
+            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_forward_ios</i>
+          </button>
+        )
+      }
+      renderArrowPrev={(onClickHandler, hasPrev) =>
+        hasPrev && (
+          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute left-1'>
+            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_back_ios</i>
+          </button>
+        )
+      }
+      */

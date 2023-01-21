@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import DemoCarousel from "./components/slider";
 import HomeService from "./HomeService";
-import { ITitledImage } from "./types";
+import { IImage, ITitledImage } from "./types";
 
 const Home = () => {
   const [images, setImages] = useState<(ITitledImage)[]>([]);
+  const [sliderItems, setSliderItems] = useState<(IImage)[]>([]);
 
   useEffect(() => {
     HomeService.getHomepage().then((res) => {
       setImages(res.data);
+      setSliderItems(res.data.filter((item) => item.folder === "carousel"));
     });
   }, []);
-
+  
   return (
     <div>
-      <DemoCarousel/>
+      <DemoCarousel slider={sliderItems}/>
       <div className="lg:my-12 my-6" id="is">
         <h1 className="font-bold lg:text-[36px] text-[24px] justify-center flex">İş Ortaklarımız</h1>
         <div className="flex items-center justify-center mt-1">
