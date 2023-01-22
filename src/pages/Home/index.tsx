@@ -9,6 +9,8 @@ const Home = () => {
   const [services, setServices] = useState<(ITitledImage)[]>([]);
 
   useEffect(() => {
+    document.title = "Anasayfa | Yeşil Bilişim";
+
     HomeService.getHomepage().then((res) => {
       setServices(res.data.filter((item) => item.folder === "services"));
       setCompanies(res.data.filter((item) => item.folder === "companies"));

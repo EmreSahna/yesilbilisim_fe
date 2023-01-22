@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const Blog = () => {
+    useEffect(() => {
+        document.title = "Blog | Yeşil Bilişim";
+    }, [])
     return (
         <div>
             <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">

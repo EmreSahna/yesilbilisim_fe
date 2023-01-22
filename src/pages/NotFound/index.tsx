@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const NotFound = () => {
+    useEffect(() => {
+        document.title = "Sayfa Bulunamadı | Yeşil Bilişim";
+    }, [])
     return (
         <div className="bg-main-blue flex justify-end h-screen items-center">
             <img src="http://localhost:8080/img/logo/logo_3.png" className="absolute left-[190px] items-center w-[300px] " alt="404" />

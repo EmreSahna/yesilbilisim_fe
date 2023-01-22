@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import IContactForm from "./types";
 import ContactService from "./ContactService";
 
@@ -30,6 +30,10 @@ const Contact = () => {
             }
         );
     };
+
+    useEffect(() => {
+        document.title = "İletişim | Yeşil Bilişim";
+    }, [])
 
     return(
         <>
