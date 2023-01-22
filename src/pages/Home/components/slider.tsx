@@ -16,6 +16,7 @@ const DemoCarousel = ({slider} : IProps) => {
       autoPlay={true} 
       interval={6000}
       showArrows={false}
+      dynamicHeight={true}
       renderIndicator={(onClickHandler, isSelected, index) => {
         if (isSelected) {
             return (
@@ -39,7 +40,7 @@ const DemoCarousel = ({slider} : IProps) => {
         slider.map((item, index) => {
           return (
             <div key={index}>
-              <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} alt="" />
+              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
             </div>
         )})
       }
@@ -50,19 +51,18 @@ const DemoCarousel = ({slider} : IProps) => {
 export default DemoCarousel;
 
 /*
-
-      renderArrowNext={(onClickHandler, hasNext) =>
-        hasNext && (
-          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute right-1'>
-            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_forward_ios</i>
-          </button>
-        )
-      }
-      renderArrowPrev={(onClickHandler, hasPrev) =>
-        hasPrev && (
-          <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute left-1'>
-            <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_back_ios</i>
-          </button>
-        )
-      }
-      */
+  renderArrowNext={(onClickHandler, hasNext) =>
+    hasNext && (
+      <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute right-1'>
+        <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_forward_ios</i>
+      </button>
+    )
+  }
+  renderArrowPrev={(onClickHandler, hasPrev) =>
+    hasPrev && (
+      <button type="button" onClick={onClickHandler} className='top-[calc(50%_-_60px)] z-10 absolute left-1'>
+        <i className="material-icons-round text-main-black text-[60px] opacity-80 font-semibold">arrow_back_ios</i>
+      </button>
+    )
+  }
+*/
