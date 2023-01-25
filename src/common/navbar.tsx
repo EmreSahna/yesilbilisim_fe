@@ -6,7 +6,7 @@ const Navbar = () => {
     }
 
     return (
-    <nav className="bg-white flex h-16 w-full items-center max-w-[1170px] mx-auto justify-center gap-8">
+    <nav className="bg-white flex h-16 w-full items-center max-w-[1170px] mx-auto justify-center gap-8 max-med:gap-4">
         <a href="/" className="w-[20%] max-med:w-[25%] max-small:w-[50%] h-auto ml-2">
             <img src="http://192.168.1.169:8080/img/logo/logo.png" alt="yesilbilisim" />
         </a>
@@ -31,15 +31,15 @@ const Navbar = () => {
                 <a href="/hizmetler">Çözümlerimiz</a>
             </li>
         </ul>
-        <div className="flex items-center justify-center h-full max-med:hidden">
+        <div className="flex items-center justify-center h-full max-med:ml-auto">
             <a href="/iletisim">
-                <button className="flex justify-center items-center bg-main-blue text-white font-semibold rounded-lg px-2 py-3 text-[14px]">
+                <button className="flex justify-center items-center bg-main-blue text-white font-semibold rounded-lg px-2 py-3 text-[14px] max-med:text-[12px]">
                     İletişime Geç
                 </button>
             </a>
         </div>
         <button
-            className="material-icons-round text-[30px] hidden max-med:inline ml-auto mr-2"
+            className="material-icons-round text-[30px] hidden max-med:inline ml-2 mr-2"
             onClick={hamburgerMenu}>
             menu
         </button>

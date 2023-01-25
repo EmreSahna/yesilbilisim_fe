@@ -151,9 +151,14 @@ const Contact = () => {
                             <span className="">info@yesilbilisim.net</span>
                         </div>
                         <hr/>
+                        <div className="flex justify-between my-1">
+                            <span className="text-main-black font-bold">Telefon Numaramız - 1</span>
+                            <span className="">+90 534 432 60 01</span>
+                        </div>
+                        <hr/>
                         <div className="flex justify-between mt-1">
-                            <span className="text-main-black font-bold">Telefon Numaramız</span>
-                            <span className="">0 (541) 800 7294</span>
+                            <span className="text-main-black font-bold">Telefon Numaramız - 2</span>
+                            <span className="">+90 549 828 45 01</span>
                         </div>
                     </div>
                     <img src="http://localhost:8080/img/contact/contact.png" />

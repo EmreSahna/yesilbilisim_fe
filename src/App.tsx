@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -11,14 +10,14 @@ import Blog from "./pages/Blog";
 
 import Topnavbar from "./common/topnavbar";
 import Navbar from "./common/navbar";
-import Spinner from "./common/spinner";
 import Footer from "./common/footer";
 import Copyright from "./common/copyright";
+import FAQ from "./pages/FAQ";
 
 function App() {
   return (
-    <Suspense fallback={<Spinner/>}>
-      {/* <Topnavbar/> */}
+    <>
+      <Topnavbar/>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,13 +27,14 @@ function App() {
         <Route path="hizmetler" element={<Services />} />
         <Route path="urunler" element={<Products />} />
         <Route path="blog" element={<Blog />} />
+        <Route path="sss" element={<FAQ />} />
         {/* 
         <Route path="admin" element={<Admin />} />
         */}
       </Routes>
       <Footer/>
       <Copyright/>
-    </Suspense>
+    </>
   );
 }
 

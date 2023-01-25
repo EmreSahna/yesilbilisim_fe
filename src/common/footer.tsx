@@ -45,10 +45,6 @@ export default function footer() {
                                 <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
                                 <a href="/sss">Gizlilik Politikası</a>
                             </li>
-                            <li className="items-center flex my-1">
-                                <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
-                                <a href="/sss">Kullanım Koşulları</a>
-                            </li>
                         </ul>
                     </div>
                     <div className="w-1/4 px-4 max-med:w-1/2 max-small:w-full max-small:mb-[30px] max-med:mb-[20px]">
@@ -59,9 +55,9 @@ export default function footer() {
                                 <i className="material-icons-round text-main-blue text-sm mr-2">location_on</i>
                                 İstanbul, Ataşehir
                             </li>
-                            <li className="items-center flex my-1">
+                            <li className="items-start flex my-1">
                                 <i className="material-icons-round text-main-blue text-sm mr-2">phone</i>
-                                +90 555 555 55 55
+                                +90 534 432 60 01 <br/> +90 549 828 45 01
                             </li>
                             <li className="items-center flex my-1">
                                 <i className="material-icons-round text-main-blue text-sm mr-2">email</i>

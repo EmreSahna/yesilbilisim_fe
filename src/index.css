@@ -4,11 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-@font-face {
-    font-family: arrow_font;
-    src: url(http://192.168.1.169:8080/img/fonts/arrow_7.ttf);
-}
-
 * {
     font-family: 'Open Sans', sans-serif;
 }

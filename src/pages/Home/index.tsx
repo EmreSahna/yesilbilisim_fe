@@ -10,7 +10,6 @@ const Home = () => {
 
   useEffect(() => {
     document.title = "Anasayfa | Yeşil Bilişim";
-
     HomeService.getHomepage().then((res) => {
       setServices(res.data.filter((item) => item.folder === "services"));
       setCompanies(res.data.filter((item) => item.folder === "companies"));
@@ -19,7 +18,7 @@ const Home = () => {
   }, []);
   
   return (
-    <div>
+    <>
       <DemoCarousel slider={slider}/>
 
       <div className="my-[50px] flex justify-center items-center" id="is">
@@ -155,8 +154,7 @@ const Home = () => {
             </li>
           </ul>
       </div>
-      
-    </div>
+    </>
   )
 }
 

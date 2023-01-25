@@ -30,7 +30,7 @@ const Blog = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">
                 <img src="http://localhost:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
                 <ul className="my-4">
@@ -85,7 +85,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
