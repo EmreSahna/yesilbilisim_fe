@@ -1,5 +1,5 @@
 import http from "../../http-common";
-import { IDescriptionalImage, IImage } from "./types";
+import { IDescriptionalImage } from "./types";
 
 const getHomepage = () => {
     return http.get<(IDescriptionalImage)[]>('/image/homepage');
