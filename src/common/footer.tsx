@@ -1,4 +1,22 @@
-export default function footer() {
+import { useState } from "react";
+import CommonService from "./CommonService";
+
+const Footer = () => {
+    const [submit, setSubmit] = useState(false);
+    const [email, setEmail] = useState<string>("");
+
+    const sendEmail = () => {
+        CommonService.registerNews(email)
+        .then(res => {
+            console.log(res);
+            setSubmit(true);
+            setEmail("");
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    };
+
     return (
         <footer className="py-7 bg-main-black">
             <div className="m-auto max-w-[1170px] ">
@@ -46,6 +64,29 @@ export default function footer() {
                                 <a href="/sss">Gizlilik Politikası</a>
                             </li>
                         </ul>
+                        {submit ? (
+                            <div className="flex items-center justify-center mt-4">
+                                <p className="text-main-gray text-sm">Başarıyla bültenimize kayıt oldunuz!</p>
+                            </div>
+                        ) : (
+                            <div className="flex items-center justify-center mt-4">
+                                <input 
+                                    type="email" 
+                                    className="focus:outline-none bg-main-gray-2 placeholder-main-black p-1" 
+                                    placeholder="example@gmail.com" 
+                                    id="email"
+                                    name="email"
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                />
+                                <button 
+                                    className="material-icons-round bg-main-blue p-1 font-semibold"
+                                    onClick={sendEmail}
+                                >
+                                        mail
+                                </button>
+                            </div>
+                        )}
                     </div>
                     <div className="w-1/4 px-4 max-med:w-1/2 max-small:w-full max-small:mb-[30px] max-med:mb-[20px]">
                         <h4 className="font-semibold text-[24px] ml-6 text-white">İletişim</h4>
@@ -89,3 +130,5 @@ export default function footer() {
         </footer>
     )
 }
+
+export default Footer;
