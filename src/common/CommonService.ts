@@ -1,7 +1,8 @@
 import http from "../http-common";
+import { IEmail } from "./types";
 
-const registerNews = (data: string) => {
-    return http.post<string>('/email/register', data);
+const registerNews = (data: IEmail) => {
+    return http.post<IEmail>('/email/register', data);
 };
 
 const CommonService = {

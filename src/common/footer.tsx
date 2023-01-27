@@ -1,21 +1,35 @@
 import { useState } from "react";
 import CommonService from "./CommonService";
+import { IEmail } from "./types";
 
 const Footer = () => {
+    const initialEmail = {
+        email: ""
+    };
+
     const [submit, setSubmit] = useState(false);
-    const [email, setEmail] = useState<string>("");
+    const [email, setEmail] = useState<IEmail>(initialEmail);
 
     const sendEmail = () => {
         CommonService.registerNews(email)
         .then(res => {
             console.log(res);
             setSubmit(true);
-            setEmail("");
+            setEmail(initialEmail);
+            setTimeout(() => {
+                setSubmit(false);
+            }
+            , 5000);
         })
         .catch(err => {
             console.log(err);
         });
     };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setEmail({ ...email, [name]: value });
+    }
 
     return (
         <footer className="py-7 bg-main-black">
@@ -76,8 +90,8 @@ const Footer = () => {
                                     placeholder="example@gmail.com" 
                                     id="email"
                                     name="email"
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
+                                    value={email.email}
+                                    onChange={handleChange}
                                 />
                                 <button 
                                     className="material-icons-round bg-main-blue p-1 font-semibold"
