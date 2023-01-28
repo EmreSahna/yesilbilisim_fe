@@ -1,8 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import ProductService from "./ProductService";
+import { IProduct } from "./types";
 
-const Products = () => {  
+const Products = () => {
+    const [products, setProducts] = useState<IProduct[]>([]);
+
     useEffect(() => {
         document.title = "Ürünler | Yeşil Bilişim";
+        ProductService.getProductsPage(0,1).then((res) => {
+            setProducts(res.data);
+            console.log(res.data);
+        });
     }, [])
     return (
         <>
@@ -15,7 +23,7 @@ const Products = () => {
                 </ul>
                 <p className="text-white font-bold text-[28px]">Ürünlerimiz</p>
             </div>
-            <div className="grid grid-cols-5 my-4">
+            <div className="grid grid-cols-5 my-4 max-w-[1170px] mx-auto">
                 <div className="col-span-1 m-2 rounded-lg h-fit border border-black border-opacity-20">
                     <div className="px-4 my-4">
                         <p className="text-center font-semibold">8 Ürün listeleniyor</p>
@@ -72,118 +80,32 @@ const Products = () => {
                             </div>
                         </div>
                         <div className="flex justify-center">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-3 rounded-xl" type="button">
+                            <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px] mt-1" type="button">
                                 <span className="text-[16px] font-semibold">Filtre Uygula</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[20px] ml-2 mt-1">¥</i>
+                                <i className="material-icons-round text-main-black text-[20px] font-semibold ml-1">arrow_forward</i>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div className="col-span-4 grid grid-cols-3 items-center gap-4 my-4">
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
-                        <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                            <img src="urun_1.jfif" className="w-full" alt="" />
-                        </div>
-                        <h3 className="font-semibold mt-[10px] text-black">MacBook Air 13. 6 inç M2 8C 10GPU 8GB RAM 512GB SSD Gece Yarısı (MLY43TU/A)</h3>
-                        <p className="font-bold text-black text-[22px] mt-[5px] text-left">10.999TL</p>
-                        <div className="flex justify-end mt-2">
-                            <button className="flex items-center bg-main-blue text-white py-1 px-2 rounded-lg" type="button">
-                                <span className="text-[12px] font-semibold text-white">Ürüne Git</span>
-                                <i className="font-arrow not-italic rotate-90 inline-block text-main-black text-[12px] ml-2 mt-0.5">¥</i>
-                            </button>
-                        </div>
-                    </div>
+                    {products && 
+                        products.map((product) => {
+                            return (
+                                <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
+                                    <div className="relative h-[240px] py-[20px] bg-white rounded-md">
+                                        <img src={`http://localhost:8080/img/${product.image}`} className="w-full" alt="" />
+                                    </div>
+                                    <h3 className="font-semibold mt-[10px] text-black">{product.brand} {product.name}</h3>
+                                    <p className="font-bold text-black text-[22px] mt-[5px] text-left">{product.price}TL</p>
+                                    <div className="flex justify-end mt-2">
+                                        <button className="flex items-center bg-main-blue text-white py-2 px-3 rounded-[10px] mt-1" type="button">
+                                            <span className="text-[12px] font-semibold">Ürüne Git</span>
+                                            <i className="material-icons-round text-main-black text-[12px] font-semibold ml-1">arrow_forward</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            )
+                    })}
                 </div>
             </div>
         </>
