@@ -1,8 +1,8 @@
 import http from "../../http-common";
-import { IProduct } from "./types";
+import { IProductPage } from "./types";
 
 const getProductsPage = (page: number, size: number) => {
-    return http.get<(IProduct)[]>('/product/page', {params: {page, size}});
+    return http.get<IProductPage>('/product/page', {params: {page, size}});
 };
 
 const ProductService = {

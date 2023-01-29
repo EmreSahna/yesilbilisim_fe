@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
 import ProductService from "./ProductService";
-import { IProduct } from "./types";
+import { IProduct, IProductPage } from "./types";
 
 const Products = () => {
+    const initialPage = {
+        currentPage: 0,
+        totalPages: 0,
+        totalElements: 0,
+        products: []
+    };
+
+    const [page, setPage] = useState<IProductPage>(initialPage);
     const [products, setProducts] = useState<IProduct[]>([]);
 
     useEffect(() => {
         document.title = "Ürünler | Yeşil Bilişim";
         ProductService.getProductsPage(0,1).then((res) => {
-            setProducts(res.data);
-            console.log(res.data);
+            setPage(res.data);
+            setProducts(res.data.products);
+            console.log(res.data); 
         });
     }, [])
     return (
@@ -89,13 +98,14 @@ const Products = () => {
                 </div>
                 <div className="col-span-4 grid grid-cols-3 items-center gap-4 my-4">
                     {products && 
-                        products.map((product) => {
+                        products.map((product, index) => {
                             return (
-                                <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product">
+                                <div className="col-span-1 w-fit h-fit p-[20px] bg-main-gray rounded-lg shadow-product" key={index}>
                                     <div className="relative h-[240px] py-[20px] bg-white rounded-md">
-                                        <img src={`http://localhost:8080/img/${product.image}`} className="w-full" alt="" />
+                                        <img src={`http://localhost:8080/img/${product.images[0].folder}/${product.images[0].filename}`} className="w-full" alt="" />
                                     </div>
-                                    <h3 className="font-semibold mt-[10px] text-black">{product.brand} {product.name}</h3>
+                                    <h3 className="font-semibold mt-[10px] text-black">{product.brand.name} {product.name}</h3>
+                                    <p>{product.description}</p>
                                     <p className="font-bold text-black text-[22px] mt-[5px] text-left">{product.price}TL</p>
                                     <div className="flex justify-end mt-2">
                                         <button className="flex items-center bg-main-blue text-white py-2 px-3 rounded-[10px] mt-1" type="button">
