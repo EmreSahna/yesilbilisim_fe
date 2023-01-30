@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DemoCarousel from "./components/slider";
+import Slider from "./components/slider";
 import HomeService from "./HomeService";
 import { IImage, ITitledImage } from "./types";
 
@@ -19,7 +19,7 @@ const Home = () => {
   
   return (
     <>
-      <DemoCarousel slider={slider}/>
+      <Slider slider={slider}/>
 
       <div className="my-[50px] flex justify-center items-center" id="is">
         <div className="max-w-[1170px]">

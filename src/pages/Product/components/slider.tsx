@@ -6,21 +6,20 @@ interface IProps {
   slider: IImage[];
 }
 
-const Slider = ({slider} : IProps) => {
+const ProductCarousel = ({slider} : IProps) => {
   
   return (
     <Carousel 
       showThumbs={false} 
       showStatus={false} 
-      infiniteLoop={true} 
-      autoPlay={true} 
-      interval={6000}
+      infiniteLoop={false}
+      autoPlay={false}
       showArrows={false}
-      dynamicHeight={true}
+      dynamicHeight={false}
       renderIndicator={(onClickHandler, isSelected, index) => {
         if (isSelected) {
             return (
-              <li className='h-[16px] w-[24px] opacity-100 bg-black mx-1 inline-block rounded-[10px]'/>
+              <li className='h-[16px] w-[16px] opacity-100 bg-black mx-1 inline-block rounded-[10px]'/>
             );
         }
         return (
@@ -39,8 +38,8 @@ const Slider = ({slider} : IProps) => {
       {slider &&
         slider.map((item, index) => {
           return (
-            <div key={index}>
-              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
+            <div className="flex justify-center items-center rounded-md overflow-hidden h-full bg-white">
+              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} className="w-full" alt="" />
             </div>
         )})
       }
@@ -48,4 +47,4 @@ const Slider = ({slider} : IProps) => {
   );
 }
 
-export default Slider;
+export default ProductCarousel;
