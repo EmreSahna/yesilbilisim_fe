@@ -1,8 +1,8 @@
 import http from "../../http-common";
-import { IProductFilter, IProductPage } from "./types";
+import { IProductFilter, IProductFilterState, IProductPage } from "./types";
 
-const getProductsPage = (page: number, size: number) => {
-    return http.get<IProductPage>('/product/page', {params: {page, size}});
+const getProductsPage = (page: number, size: number, options?: IProductFilterState) => {
+    return http.post<IProductPage>('/product/page', options, { params: { page, size } });
 };
 
 const getProductsFilter = () => {

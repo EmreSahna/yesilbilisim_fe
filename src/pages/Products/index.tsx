@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductService from "./ProductService";
-import { IBrand, ICategory, IProductCard, IProductFilter, IProductPage } from "./types";
+import { IBrand, ICategory, IProductCard, IProductFilterState, IProductPage } from "./types";
 
 const Products = () => {
     const initialPage = {
@@ -14,24 +14,58 @@ const Products = () => {
         brands: [],
         categories: [],
         maxPrice: 0
-    }
+    };
 
-    const pageItemCount = 2;
-    const currentPage = 0;
-
+    const pageItemCount = 1;
+    const [currentPage, setCurrentPage] = useState<number>(0);
     const [page, setPage] = useState<IProductPage>(initialPage);
+
     const [products, setProducts] = useState<IProductCard[]>([]);
+
     const [brands, setBrands] = useState<IBrand[]>([]);
     const [categories, setCategories] = useState<ICategory[]>([]);
     const [maxPrice, setMaxPrice] = useState<number>(0);
 
-    useEffect(() => {
-        document.title = "Ürünler | Yeşil Bilişim";
+    const [filterPrice, setFilterPrice] = useState<number>(0);
+
+    const [filter, setFilter] = useState<IProductFilterState>(initialFilter);
+
+    const defaultPage = () => {
         ProductService.getProductsPage(currentPage,pageItemCount).then((res) => {
             setPage(res.data);
             setProducts(res.data.products);
         });
+    }
 
+    const resetPage = () => {
+        defaultPage();
+        clearFilter();
+    }
+
+    const clearFilter = () => {
+        setFilter({
+            brands: [],
+            categories: [],
+            maxPrice: 0
+        });
+
+        const categories = document.getElementsByName("category") as NodeListOf<HTMLInputElement>;
+        const brands = document.getElementsByName("brand") as NodeListOf<HTMLInputElement>;
+
+        categories.forEach((category) => {
+            category.checked = false;
+        });
+
+        brands.forEach((brand) => {
+            brand.checked = false;
+        });
+
+        setFilterPrice(0);
+    }
+
+    useEffect(() => {
+        document.title = "Ürünler | Yeşil Bilişim";
+        defaultPage();
         ProductService.getProductsFilter().then((res) => {
             setBrands(res.data.brands);
             setCategories(res.data.categories);
@@ -40,27 +74,67 @@ const Products = () => {
     }, [])
 
     const nextPage = () => {
-        if(page.currentPage < page.totalPages){
-            ProductService.getProductsPage(page.currentPage + 1,pageItemCount).then((res) => {
-                setPage(res.data);
-                setProducts(res.data.products);
-                console.log(res.data);
-            });
+        if(page.currentPage < page.totalPages-1){
+            if(filter.brands.length > 0 || filter.categories.length > 0 || filter.maxPrice > 0){
+                getProductsWithFilter(page.currentPage + 1,pageItemCount,filter);
+            }else{
+                ProductService.getProductsPage(page.currentPage + 1,pageItemCount).then((res) => {
+                    setPage(res.data);
+                    setProducts(res.data.products);
+                });
+            }
         }
     }
 
     const prevPage = () => {
         if(page.currentPage > 0){
-            ProductService.getProductsPage(page.currentPage - 1,pageItemCount).then((res) => {
-                setPage(res.data);
-                setProducts(res.data.products);
-                console.log(res.data);
-            });
+            if(filter.brands.length > 0 || filter.categories.length > 0 || filter.maxPrice > 0){
+                getProductsWithFilter(page.currentPage - 1,pageItemCount,filter);
+            }else{
+                ProductService.getProductsPage(page.currentPage - 1,pageItemCount).then((res) => {
+                    setPage(res.data);
+                    setProducts(res.data.products);
+                });
+            }
         }
     }
 
-    const updatePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
-        document.getElementById("price-range")!.innerHTML = e.target.value;
+    const getProductsWithFilter = (p: number, s: number, f: IProductFilterState) => {
+        ProductService.getProductsPage(p,s,f).then((res) => {
+            setPage(res.data);
+            setProducts(res.data.products);
+        });
+    }
+
+    const filterProducts = () => {
+        setCurrentPage(0);
+        getProductsWithFilter(currentPage, pageItemCount, filter);
+    }
+
+    const doFilterCheckBox = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if(e.target.name === "brand"){
+            if(e.target.checked){
+                filter.brands.push(e.target.id);
+            }else{
+                filter.brands = filter.brands.filter((brand) => brand !== e.target.id);
+            }
+        }else if(e.target.name === "category"){
+            if(e.target.checked){
+                filter.categories.push(e.target.id);
+            }else{
+                filter.categories = filter.categories.filter((category) => category !== e.target.id);
+            }
+        }
+        filterProducts();
+    }
+
+    const doFilterPrice = (e: React.MouseEvent<HTMLInputElement>) => {
+        filter.maxPrice = Number(e.currentTarget.value);
+        filterProducts();
+    }
+
+    const changePriceVal = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFilterPrice(Number(e.target.value));
     }
 
     return (
@@ -88,7 +162,7 @@ const Products = () => {
                                 <hr className="my-1" />
                                 {categories.map((category) => (
                                     <div className="px-2">
-                                        <input type="checkbox" id={category.name} name={category.name} />
+                                        <input type="checkbox" id={category.name} name="category" onChange={doFilterCheckBox}/>
                                         <label htmlFor={category.name} className="ml-1">{category.name}</label>
                                     </div>
                                 ))}
@@ -99,7 +173,7 @@ const Products = () => {
                                 <hr className="my-1" />
                                 {brands.map((brand) => (
                                     <div className="px-2">
-                                        <input type="checkbox" id={brand.name} name={brand.name} />
+                                        <input type="checkbox" id={brand.name} name="brand" onChange={doFilterCheckBox}/>
                                         <label htmlFor={brand.name} className="ml-1">{brand.name}</label>
                                     </div>    
                                 ))}
@@ -108,14 +182,14 @@ const Products = () => {
                                 <p className="font-semibold ml-2">Fiyat Aralığı</p>
                                 <hr className="my-1" />
                                 <div className="flex items-center justify-center w-min">
-                                    <input type="range" id="price" name="price" min="0" max={maxPrice} onChange={updatePrice} />
-                                    <label htmlFor="price" id="price-range"></label>
+                                    <input type="range" id="price" name="price" min="0" value={filterPrice}  max={maxPrice} onChange={changePriceVal} onMouseUp={doFilterPrice} />
+                                    <label htmlFor="price" id="price-range">{filterPrice}</label>
                                 </div>
                             </div>
                             <div className="flex justify-center">
-                                <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px] mt-1" type="button">
-                                    <span className="text-[16px] font-semibold">Filtre Uygula</span>
-                                    <i className="material-icons-round text-main-black text-[20px] font-semibold ml-1">arrow_forward</i>
+                                <button className="flex items-center text-main-blue py-2 px-4 rounded-[10px] mt-1" type="button"
+                                onClick={resetPage}>
+                                    <span className="text-[16px] font-semibold">Filtreleri Temizle</span>
                                 </button>
                             </div>
                         </div>
@@ -142,12 +216,12 @@ const Products = () => {
                 <div className="flex justify-center mx-auto items-center">
                     {page.totalPages > 1 &&
                         <div className="flex justify-center">
-                            <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px] mt-1" type="button"
+                            <button className="flex items-center text-main-blue py-2 px-4 rounded-[10px] mt-1" type="button"
                             onClick={prevPage}>
                                 <i className="material-icons-round text-main-black text-[20px] font-semibold mr-1">arrow_back</i>
                                 <span className="text-[16px] font-semibold">Önceki</span>
                             </button>
-                            <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px] mt-1 ml-2" type="button"
+                            <button className="flex items-center text-main-blue py-2 px-4 rounded-[10px] mt-1 ml-2" type="button"
                             onClick={nextPage}>
                                 <span className="text-[16px] font-semibold">Sonraki</span>
                                 <i className="material-icons-round text-main-black text-[20px] font-semibold ml-1">arrow_forward</i>

@@ -32,3 +32,9 @@ export interface IProductFilter{
     categories: ICategory[];
     maxPrice: number;
 }
+
+export interface IProductFilterState{
+    brands: string[];
+    categories: string[];
+    maxPrice: number;
+}
