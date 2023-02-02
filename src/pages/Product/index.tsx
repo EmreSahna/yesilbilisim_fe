@@ -16,6 +16,7 @@ const Product = () => {
             setProduct(res.data);
             setCategory(res.data.category);
             setBrand(res.data.brand);
+            document.title = res.data.brand.name +" "+ res.data.name + " | Yeşil Bilişim";
         });
     }, [id]);
     
@@ -30,7 +31,7 @@ const Product = () => {
                     </div>
                     <div className="w-1/2 p-[10px] flex flex-col justify-start items-start">
                         <div className="bg-main-gray p-[10px] rounded-lg mb-2">
-                            <h1 className="font-medium text-[24px]"><span className="text-main-blue font-semibold">{brand.name}</span> {product.name}</h1>
+                            <h1 className="font-medium text-[24px]"><span className="text-main-blue font-semibold">{brand.name}</span> {product.name} - {category.name}</h1>
                             <p className="text-[20px]">{product.description}</p>
                             <p className="font-semibold text-[24px]">{Intl.NumberFormat('tr-TR',{style: 'currency', currency:'TRY'}).format(product.price)}</p>
                         </div>

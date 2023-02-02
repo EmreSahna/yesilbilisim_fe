@@ -59,7 +59,7 @@ const Home = () => {
           {services &&
             services.map((item, index) => {
               return (
-                <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12">
+                <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12" key={index}>
                   <div className="shadow-card rounded-lg bg-white h-full pt-4">
                     <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
                       <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} className="w-full invert" alt="" />

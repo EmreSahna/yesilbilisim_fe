@@ -14,7 +14,7 @@ const Slider = ({slider} : IProps) => {
       showStatus={false} 
       infiniteLoop={true} 
       autoPlay={true} 
-      interval={6000}
+      interval={3000}
       showArrows={false}
       dynamicHeight={true}
       renderIndicator={(onClickHandler, isSelected, index) => {
@@ -40,7 +40,7 @@ const Slider = ({slider} : IProps) => {
         slider.map((item, index) => {
           return (
             <div key={index}>
-              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
+              <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} alt="" />
             </div>
         )})
       }

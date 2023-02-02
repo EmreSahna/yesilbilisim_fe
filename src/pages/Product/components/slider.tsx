@@ -39,7 +39,7 @@ const ProductCarousel = ({slider} : IProps) => {
         slider.map((item, index) => {
           return (
             <div className="flex justify-center items-center rounded-md overflow-hidden h-full bg-white">
-              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} className="w-full" alt="" />
+              <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} className="w-full" alt="" />
             </div>
         )})
       }

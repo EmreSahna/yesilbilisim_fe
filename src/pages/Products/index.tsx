@@ -140,7 +140,7 @@ const Products = () => {
     return (
         <>
             <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">
-                <img src="http://localhost:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
+                <img src="http://192.168.1.169:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
                 <ul className="my-4">
                     <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
                     <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
@@ -203,7 +203,7 @@ const Products = () => {
                                 <a href={`urunler/${product.id}`}>
                                     <div className="p-[20px] bg-main-gray rounded-lg shadow-product h-full flex-col flex justify-between" key={index}>
                                         <div className="flex items-center h-[240px] bg-white rounded-md overflow-hidden">
-                                            <img src={`http://localhost:8080/img/${product.image.folder}/${product.image.filename}`} className="w-full" alt="" />
+                                            <img src={`http://192.168.1.169:8080/img/${product.image.folder}/${product.image.filename}`} className="w-full" alt="" />
                                         </div>
                                         <h3 className="font-medium mt-[10px] text-black text-[18px] line-clamp-3 h-[81px]"><span className="font-semibold">{product.brand.name}</span> {product.name} {product.description}</h3>
                                         <p className="font-bold text-main-blue text-[22px] mt-[5px] text-left">{Intl.NumberFormat('tr-TR',{style: 'currency', currency:'TRY'}).format(product.price)}</p>
