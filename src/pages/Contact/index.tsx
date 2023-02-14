@@ -161,7 +161,7 @@ const Contact = () => {
                             <span className="">+90 549 828 45 01</span>
                         </div>
                     </div>
-                    <img src="http://192.168.1.169:8080/img/contact/contact.png" />
+                    <img src="http://localhost:8080/img/contact/contact.png" />
                 </div>
             </div>
         )}

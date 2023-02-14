@@ -40,7 +40,7 @@ const Slider = ({slider} : IProps) => {
         slider.map((item, index) => {
           return (
             <div key={index}>
-              <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} alt="" />
+              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
             </div>
         )})
       }

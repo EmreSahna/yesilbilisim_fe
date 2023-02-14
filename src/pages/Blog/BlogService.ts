@@ -1,8 +1,8 @@
 import http from "../../http-common";
-import { IBlog } from "./types";
+import { IPost } from "./types";
 
 const getBlogs = () => {
-    return http.get<IBlog>('/blog/medium');
+    return http.get<IPost[]>('/blog/id/all');
 };
 
 const BlogService = {

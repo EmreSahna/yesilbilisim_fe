@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'arrow': ['arrow_font'],
+      'noto': ['noto_serif_ahom']
     },
     extend: {
       screens: {
@@ -15,6 +16,7 @@ module.exports = {
       boxShadow: {
         'card': '0px 0px 5px rgba(0, 0, 0, 0.25)',
         'product': '0 0 30px rgba(0, 0, 0, .04)',
+        'card-hover':'0px 4px 8px rgba(38, 38, 38, 0.2);'
       },
       colors: {
         'main-blue': '#0870B0',

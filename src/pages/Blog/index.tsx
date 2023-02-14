@@ -1,7 +1,87 @@
 import { useEffect, useState } from "react";
 import BlogService from "./BlogService";
-import { IBlog, IPost } from "./types";
+import { IPost } from "./types";
 
+import BlogNavigate from "../../common/blognavigate";
+
+const Blog = () => {
+    const [posts, setPosts] = useState<IPost[]>([]);
+
+    useEffect(() => {
+        let isDone = false;
+
+        document.title = "Blog | Yeşil Bilişim";
+
+        BlogService.getBlogs().then((res) => {
+            if (isDone) return;
+            setPosts(res.data);
+        });
+
+        return () => {
+            isDone = true;
+        };
+    }, []);
+
+    return (
+        <>
+            <div className="h-auto flex justify-center py-6 flex-col items-center bg-main-blue">
+                <img src="http://192.168.1.169:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
+                <ul className="my-4">
+                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
+                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
+                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
+                </ul>
+                <p className="text-white font-bold text-[28px]">Blog</p>
+            </div>
+            <div className="max-w-[1170px] mx-auto flex my-[50px]">
+                <div className="flex flex-col gap-6 w-[75%]">
+                    {posts && 
+                        posts.map((blog,index) => {
+                            return(
+                                <div className="bg-main-gray flex items-center p-4 gap-[3%]">
+                                    <div className="w-[30%] flex justify-center">
+                                        <a href={"blog/"+blog.url}>
+                                            <div className="overflow-hidden border">
+                                                <img src={`http://localhost:8080/img/${blog.thumbnailImage}`} className="object-cover w-full h-full" alt="" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="w-[70%]">
+                                        <h1 className="font-bold text-main-black line-clamp-2 text-[24px]">
+                                            <a href={"blog/"+blog.url}>
+                                                {blog.title}
+                                            </a>
+                                        </h1>
+                                        <hr className="mt-2"/>
+                                        <p className="my-2 line-clamp-4 text-[16px]">
+                                            {blog.description}
+                                        </p>
+                                        <div className="flex justify-between">
+                                            <div className="flex items-center gap-[2px] text-main-blue">
+                                                <span className="material-icons-round text-[16px]">schedule</span>
+                                                <p className="text-[14px] font-semibold">{blog.createdDate}</p>    
+                                            </div>
+                                            <button className="text-main-blue font-semibold">
+                                                <a href={"blog/"+blog.url}>
+                                                    Devamını Oku...
+                                                </a>
+                                            </button>
+                                        </div>    
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                <BlogNavigate/>
+            </div>
+        </>
+    );
+};
+
+export default Blog;
+
+/*
 const Blog = () => {
     const [infos, setInfos] = useState<IBlog>({} as IBlog);
     const [posts, setPosts] = useState<IPost[]>([]);
@@ -90,3 +170,4 @@ const Blog = () => {
 };
 
 export default Blog;
+*/

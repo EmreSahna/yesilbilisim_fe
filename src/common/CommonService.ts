@@ -5,8 +5,13 @@ const registerNews = (data: IEmail) => {
     return http.post<IEmail>('/email/register', data);
 };
 
+const blogNavigator = () => {
+    return http.get('/blog/navigator');
+};
+
 const CommonService = {
-    registerNews
+    registerNews,
+    blogNavigator
 };
   
 export default CommonService;

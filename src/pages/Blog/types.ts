@@ -1,14 +1,11 @@
 export interface IPost {
     title: string;
     description: string;
-    pubDate: string;
-    image: string;
-    link: string;
+    createdDate: string;
+    thumbnailImage: string;
+    url: string;
 }
 
-export interface IBlog {
-    username: string;
-    profileImage: string;
-    profileLink: string;
-    posts: IPost[];
+export interface IDetailedPost extends IPost{
+    blogContent: string;
 }

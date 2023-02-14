@@ -83,21 +83,26 @@ const Footer = () => {
                                 <p className="text-main-gray text-sm">Başarıyla bültenimize kayıt oldunuz!</p>
                             </div>
                         ) : (
-                            <div className="flex items-center justify-center mt-4">
-                                <input 
-                                    type="email" 
-                                    className="focus:outline-none bg-main-gray-2 placeholder-main-black p-1" 
-                                    placeholder="example@gmail.com" 
-                                    id="email"
-                                    name="email"
-                                    value={email.email}
-                                    onChange={handleChange}
-                                />
+                            <div className="items-center flex flex-col justify-center mt-4">
+                                <div className="flex">
+                                    <span className="material-icons-round inline-flex items-center px-2 text-lg text-main-blue bg-main-gray-2 rounded-l-md">
+                                        mail
+                                    </span>
+                                    <input 
+                                        type="email" 
+                                        className="focus:outline-none bg-main-gray-2 placeholder-main-black p-1 rounded-r-md" 
+                                        placeholder="example@gmail.com" 
+                                        id="email"
+                                        name="email"
+                                        value={email.email}
+                                        onChange={handleChange}
+                                    />
+                                </div>
                                 <button 
-                                    className="material-icons-round bg-main-blue p-1 font-semibold"
+                                    className="bg-main-blue px-2 py-1 font-semibold text-white mt-2 rounded-md"
                                     onClick={sendEmail}
                                 >
-                                        mail
+                                        Bültene Kayıt Ol
                                 </button>
                             </div>
                         )}

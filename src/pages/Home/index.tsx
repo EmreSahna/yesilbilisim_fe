@@ -29,7 +29,7 @@ const Home = () => {
               companies.map((item, index) => {
                 return (
                   <li className="lg:w-[15%] lg:p-5 p-3 w-[25%]" key={index}>
-                    <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} alt="" />
+                    <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
                   </li>
                 )
               })
@@ -39,7 +39,7 @@ const Home = () => {
       </div>
 
       <div className="bg-main-gray flex md:flex-row flex-col justify-center mt-6 my-[100px] lg:px-12 lg:py-0 py-6 gap-8">          
-        <img src={`http://192.168.1.169:8080/img/homepage/ecommerce.jpg`} className="h-auto w-[500px]" alt="" />
+        <img src={`http://localhost:8080/img/homepage/ecommerce.jpg`} className="h-auto w-[500px]" alt="" />
         <div className="text-left my-auto lg:mx-0 mx-4 text-main-black">
           <h1 className="font-bold text-[36px]">Ürünlerimiz</h1>
           <p className="text-[14px] text-justify font-medium max-w-[500px]">Müşterilerimize en iyi hizmeti vermeyi amaçlıyoruz ve onların ihtiyaçlarını karşılamaya çalışıyoruz. Lütfen bizimle iletişime geçin ve kaliteli ürünlerimizi keşfedin.</p>
@@ -62,7 +62,7 @@ const Home = () => {
                 <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12" key={index}>
                   <div className="shadow-card rounded-lg bg-white h-full pt-4">
                     <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
-                      <img src={`http://192.168.1.169:8080/img/${item.folder}/${item.filename}`} className="w-full invert" alt="" />
+                      <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} className="w-full invert" alt="" />
                     </div>
                     <p className="text-black text-[20px] font-bold mt-1 mx-3">{item.title}</p>
                   </div>
@@ -93,7 +93,7 @@ const Home = () => {
             </a>
           </button>
         </div>
-        <img src={`http://192.168.1.169:8080/img/homepage/destek.jpg`} className="h-auto w-[500px]" alt="" />
+        <img src={`http://localhost:8080/img/homepage/destek.jpg`} className="h-auto w-[500px]" alt="" />
       </div>
 
       <div className="my-[100px] max-w-[1170px] relative text-white mx-auto">
@@ -122,7 +122,7 @@ const Home = () => {
       </div>
 
       <div className="bg-main-gray flex md:flex-row flex-col justify-center my-[100px] lg:px-12 lg:py-0 py-6 gap-8">
-        <img src={`http://192.168.1.169:8080/img/homepage/blog.jpg`} className="h-auto w-[500px]" alt="" />
+        <img src={`http://localhost:8080/img/homepage/blog.jpg`} className="h-auto w-[500px]" alt="" />
         <div className="text-left my-auto lg:mx-0 mx-4 text-main-black">
           <h1 className="font-bold text-[36px]">Blog'da Okumaya Değer</h1>
           <p className="text-[14px] text-justify font-medium max-w-[500px]">Yeşil bilişim olarak, müşterilerimize faydalı bilgiler sunmayı hedefliyoruz ve onların ihtiyaçlarını karşılamaya çalışıyoruz. Blog yazılarımızı okumaya devam edin ve Yeşil bilişim ile ilgili daha fazla bilgi edinin.</p>

@@ -16,6 +16,8 @@ import FAQ from "./pages/FAQ";
 import Product from "./pages/Product";
 import AdminLoginForm from "./pages/AdminLoginForm";
 import AdminDashboard from "./pages/AdminDashboard";
+import Solutions from "./pages/Solutions";
+import Blogpage from "./pages/Blogpage";
 
 const App = () => {
   return (
@@ -27,9 +29,11 @@ const App = () => {
           <Route path="/iletisim" element={<Contact/>} />
           <Route path="*" element={<NotFound />} /> 
           <Route path="hizmetler" element={<Services />} />
+          <Route path="cozumler" element={<Solutions />} />
           <Route path="urunler" element={<Products />} />
           <Route path="urunler/:id" element={<Product />} />  
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:id" element={<Blogpage />} />
           <Route path="sss" element={<FAQ />} />
         </Route>
         <Route path="admin/login" element={<AdminLoginForm />} />

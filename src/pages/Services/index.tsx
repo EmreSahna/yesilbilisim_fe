@@ -6,7 +6,7 @@ const Services = () => {
     const [solutions, setSolutions] = useState<IDescriptionalImage[]>([]);
 
     useEffect(() => {
-        document.title = "Hizmetler | Yeşil Bilişim";
+        document.title = "Çözümlerimiz | Yeşil Bilişim";
         SolutionService.getSolutionpage().then((res) => {
             setSolutions(res.data);
             console.log(res.data);
@@ -22,12 +22,95 @@ const Services = () => {
                     <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
                     <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
                 </ul>
-                <p className="text-white font-bold text-[28px]">Çözümlerimiz</p>
+                <p className="text-white font-bold text-[28px]">Hizmetlerimiz</p>
             </div>
             <div className="my-[50px] max-w-[1170px] mx-auto">
-                {solutions && 
+                <div className="my-[50px]">
+                    <p className="text-main-blue font-bold text-[32px]">Hizmetlerimiz</p>
+                    <p className="text-[18px]">Yeşilbilişim olarak müşterilerimize çeşitli bilişim hizmetleri sunuyoruz.</p>
+                </div>
+                <div className="flex flex-wrap text-center justify-start">
+                    <div className="w-1/5 p-2">
+                        <a href="">
+                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                    <img src="http://localhost:8080/img/services/hizmetler_2.png" className="w-full invert" alt="" />
+                                </div>
+                                <p className="text-[20px] font-bold mt-1 mx-3">Veri Yönetimi Güvenliği</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="w-1/5 p-2">
+                        <a href="">
+                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                    <img src="http://localhost:8080/img/services/hizmetler_3.png" className="w-full invert" alt="" />
+                                </div>
+                                <p className="text-[20px] font-bold mt-1 mx-3">Bulut Bilişim Hizmetleri</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="w-1/5 p-2">
+                        <a href="">
+                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                    <img src="http://localhost:8080/img/services/hizmetler_4.png" className="w-full invert" alt="" />
+                                </div>
+                                <p className="text-[20px] font-bold mt-1 mx-3">Web Tasarım Ve Geliştirme</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="w-1/5 p-2">
+                        <a href="">
+                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                    <img src="http://localhost:8080/img/services/hizmetler_5.png" className="w-full invert" alt="" />
+                                </div>
+                                <p className="text-[20px] font-bold mt-1 mx-3">Bilişim Güvenliği Hizmetleri</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="w-1/5 p-2">
+                        <a href="">
+                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                    <img src="http://localhost:8080/img/services/hizmetler_6.png" className="w-full invert" alt="" />
+                                </div>
+                                <p className="text-[20px] font-bold mt-1 mx-3">İşletme Yazılımı Geliştirme</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="w-1/5 p-2">
+                        <a href="">
+                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                    <img src="http://localhost:8080/img/services/hizmetler_7.png" className="w-full invert" alt="" />
+                                </div>
+                                <p className="text-[20px] font-bold mt-1 mx-3">Grafik Tasarım</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="w-1/5 p-2">
+                        <a href="">
+                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                    <img src="http://localhost:8080/img/services/hizmetler_8.png" className="w-full invert" alt="" />
+                                </div>
+                                <p className="text-[20px] font-bold mt-1 mx-3">Pazarlama Danışmanlığı</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Services;
+
+/*
+{solutions && 
                     solutions.map((solution, index) => {
-                        if (index % 3 === 0) {
                         return (
                             <div id={`${index}`} className="bg-main-gray flex items-center p-12 my-8 justify-between max-small:p-4 flex-wrap">
                                 <div className="w-[48%] max-small:w-full">
@@ -39,36 +122,6 @@ const Services = () => {
                                 </div>
                             </div>
                         )
-                        }if(index % 3 === 1) {
-                        return (
-                            <div id={`${index}`} className="bg-main-black flex items-center p-12 my-8 justify-between max-small:p-4 flex-wrap">
-                                <div className="w-[48%] max-small:w-full">
-                                    <img src={`http://192.168.1.169:8080/img/${solution.folder}/${solution.filename}`} className="w-full rounded-lg" alt="" />
-                                </div>
-                                <div className="w-[48%] max-small:w-full text-main-gray">
-                                    <h1 className="font-bold text-[36px]">{solution.title}</h1>
-                                    <p className="text-[14px] text-justify">{solution.description}</p>
-                                </div>
-                            </div>
-                        )
-                        }if(index % 3 === 2) {
-                        return (
-                            <div id={`${index}`} className="bg-main-blue flex items-center p-12 my-8 justify-between max-small:p-4 flex-wrap">
-                                <div className="w-[48%] max-small:w-full text-main-gray">
-                                    <h1 className="font-bold text-[36px]">{solution.title}</h1>
-                                    <p className="text-[14px] text-justify">{solution.description}</p>
-                                </div>
-                                <div className="w-[48%] max-small:w-full">
-                                    <img src={`http://192.168.1.169:8080/img/${solution.folder}/${solution.filename}`} className="w-full rounded-lg" alt="" />
-                                </div>
-                            </div>
-                        )
-                        }
                     })
                 }
-            </div>
-        </>
-    );
-};
-
-export default Services;
+                */
