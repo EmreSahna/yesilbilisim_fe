@@ -46,23 +46,31 @@ const Home = () => {
             services.map((item, index) => {
               return (
                 <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12" key={index}>
-                  <div className="shadow-card rounded-lg bg-white h-full pt-4">
-                    <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
-                      <img src={`http://localhost:8080/img/${item.icon}`} className="w-full invert" alt="" />
+                  <a href={`hizmetler/${item.url}`}>
+                    <div className="shadow-card rounded-lg bg-white h-full pt-4">
+                      <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                        <img src={`http://localhost:8080/img/${item.icon}`} className="w-full invert" alt="" />
+                      </div>
+                      <p className="text-black text-[20px] font-bold mt-1 mx-3">{item.title}</p>
                     </div>
-                    <p className="text-black text-[20px] font-bold mt-1 mx-3">{item.title}</p>
-                  </div>
+                  </a>
                 </div>
               )
             })
           }
         </section>
         <p className="font-normal text-[14px] max-w-[1170px] mx-auto text-center">Bu hizmetlerimizin yanı sıra, müşterilerimize özel olarak tasarlanmış paketler de sunmaktayız. Böylece, müşterilerimizin ihtiyaçlarına en uygun hizmetleri sunarak, onların işlemlerini daha da kolaylaştırırız. Eğer siz de en iyi hizmetleri arıyorsanız, şirketimiz ile iletişime geçebilir ve özel hizmetlerimizden yararlanabilirsiniz.</p>
-        <div className="flex justify-center my-2">
+        <div className="flex justify-center my-2 gap-4">
           <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px]" type="button">
             <a href="/hizmetler" className="flex items-center">
               <span className="text-[16px] font-semibold">Hizmetlerimizi İncele</span>
               <i className="material-icons-round text-main-black text-[20px] font-semibold ml-1">arrow_forward</i>
+            </a>
+          </button>
+          <button className="flex items-center bg-main-black text-white py-2 px-4 rounded-[10px]" type="button">
+            <a href="/cozumler" className="flex items-center">
+              <span className="text-[16px] font-semibold">Çözümlerimizi İncele</span>
+              <i className="material-icons-round text-main-blue text-[20px] font-semibold ml-1">arrow_forward</i>
             </a>
           </button>
         </div>

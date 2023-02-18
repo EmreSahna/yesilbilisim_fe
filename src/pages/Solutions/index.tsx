@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
+import SolutionService from "./SolutionService";
+import { ICard } from "./types";
 
 const Solutions = () => {
+    const [solutions, setSolutions] = useState<ICard[]>([]);
+
     useEffect(() => {
         document.title = "Çözümlerimiz | Yeşil Bilişim";
+        SolutionService.getSolutionpage().then((res) => {
+            setSolutions(res.data);
+        });
     }, [])
+    
     return (
         <>
             <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">
@@ -21,36 +29,20 @@ const Solutions = () => {
                     <p className="text-[18px]">Yeşilbilişim, müşterilerinin ihtiyaçlarını karşılamak amacıyla kaliteli ve güncel çözümler sunmaktadır.</p>
                 </div>
                 <div className="flex flex-wrap text-center justify-start">
-                    <div className="w-1/5 p-2">
-                        <a href="">
-                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
-                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
-                                    <img src="http://localhost:8080/img/services/hizmetler_9.png" className="w-full invert" alt="" />
-                                </div>
-                                <p className="text-[20px] font-bold mt-1 mx-3">Web Güvenliği Çözümleri</p>
+                    {solutions &&
+                        solutions.map((solutions) => (
+                            <div className="w-1/5 p-2">
+                                <a href={`cozumler/${solutions.url}`}>
+                                    <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
+                                        <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                                            <img src={`http://localhost:8080/img/${solutions.icon}`} className="w-full invert" alt="" />
+                                        </div>
+                                        <p className="text-[20px] font-bold mt-1 mx-3">{solutions.title}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div className="w-1/5 p-2">
-                        <a href="">
-                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
-                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
-                                    <img src="http://localhost:8080/img/services/hizmetler_10.png" className="w-full invert" alt="" />
-                                </div>
-                                <p className="text-[20px] font-bold mt-1 mx-3">E-posta Güvenliği Çözümleri</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="w-1/5 p-2">
-                        <a href="">
-                            <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
-                                <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
-                                    <img src="http://localhost:8080/img/services/hizmetler_1.png" className="w-full invert" alt="" />
-                                </div>
-                                <p className="text-[20px] font-bold mt-1 mx-3">Ağ ve Güvenlik Çözümleri</p>
-                            </div>
-                        </a>
-                    </div>
+                        ))
+                    }
                 </div>
             </div>
         </>
@@ -58,21 +50,3 @@ const Solutions = () => {
 };
 
 export default Solutions;
-
-/*
-{solutions && 
-                    solutions.map((solution, index) => {
-                        return (
-                            <div id={`${index}`} className="bg-main-gray flex items-center p-12 my-8 justify-between max-small:p-4 flex-wrap">
-                                <div className="w-[48%] max-small:w-full">
-                                    <h1 className="font-bold text-[36px]">{solution.title}</h1>
-                                    <p className="text-[14px] text-justify">{solution.description}</p>
-                                </div>
-                                <div className="w-[48%] max-small:w-full">
-                                    <img src={`http://192.168.1.169:8080/img/${solution.folder}/${solution.filename}`} className="rounded-lg" alt="" />
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-                */

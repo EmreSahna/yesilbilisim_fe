@@ -49,15 +49,15 @@ const Footer = () => {
                             </li>
                             <li className="items-center flex my-1">
                                 <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
-                                <a href="/urunler">Ürünlerimiz</a>
-                            </li>
-                            <li className="items-center flex my-1">
-                                <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
                                 <a href="/blog">Blog</a>
                             </li>
                             <li className="items-center flex my-1">
                                 <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
-                                <a href="/hizmetler">Çözümlerimiz</a>
+                                <a href="/hizmetler">Hizmetlerimiz</a>
+                            </li>
+                            <li className="items-center flex my-1">
+                                <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
+                                <a href="/cozumler">Çözümlerimiz</a>
                             </li>
                         </ul>
                     </div>
@@ -90,7 +90,7 @@ const Footer = () => {
                                     </span>
                                     <input 
                                         type="email" 
-                                        className="focus:outline-none bg-main-gray-2 placeholder-main-black p-1 rounded-r-md" 
+                                        className="focus:outline-none bg-main-gray-2 placeholder-main-black p-1 rounded-r-md text-sm" 
                                         placeholder="example@gmail.com" 
                                         id="email"
                                         name="email"
@@ -137,7 +137,9 @@ const Footer = () => {
                                 <i className="material-icons-round text-main-blue text-sm mr-2">arrow_forward_ios</i>
                                 <a href="https://medium.com/@emre.sahna">Medium</a>
                             </li>
-                            <img src="http://localhost:8080/img/logo/logo.png" className="w-fit my-4 max-small:hidden" alt="" />
+                            <a href="/">
+                                <img src="http://localhost:8080/img/logo/logo.png" className="w-fit my-4 max-small:hidden" alt="" />
+                            </a>
                         </ul>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 export interface ICard {
+    url: string;
     title: string;
     icon: string;
 }

@@ -16,18 +16,22 @@ import AdminLoginForm from "./pages/AdminLoginForm";
 import AdminDashboard from "./pages/AdminDashboard";
 import Solutions from "./pages/Solutions";
 import Blogpage from "./pages/Blogpage";
+import Servicepage from "./pages/Servicepage";
+import Solutionpage from "./pages/Solutionpage";
 
 const App = () => {
   return (
     <>
       <Routes>
         <Route element={<><Topnavbar/><Navbar/><Outlet/><Footer/><Copyright/></>}>
-          <Route path="/" element={<Home />} />
+          <Route path="" element={<Home />} />
           <Route path="hakkimizda" element={<About />} />
-          <Route path="/iletisim" element={<Contact/>} />
+          <Route path="iletisim" element={<Contact/>} />
           <Route path="*" element={<NotFound />} /> 
           <Route path="hizmetler" element={<Services />} />
           <Route path="cozumler" element={<Solutions />} />
+          <Route path="hizmetler/:id" element={<Servicepage />} />
+          <Route path="cozumler/:id" element={<Solutionpage />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:id" element={<Blogpage />} />
           <Route path="sss" element={<FAQ />} />
