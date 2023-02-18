@@ -5,5 +5,4 @@ export interface LoginForm {
 
 export interface LoginFormResponse {
     token: string;
-    message: string;
 }

@@ -1,9 +1,8 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { IImage } from "../types";
 
 interface IProps {
-  slider: IImage[];
+  slider: string[];
 }
 
 const Slider = ({slider} : IProps) => {
@@ -40,7 +39,7 @@ const Slider = ({slider} : IProps) => {
         slider.map((item, index) => {
           return (
             <div key={index}>
-              <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
+              <img src={`http://localhost:8080/img/${item}`} alt="" />
             </div>
         )})
       }

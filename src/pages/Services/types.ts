@@ -1,7 +1,11 @@
-export interface IDescriptionalImage {
-    id: string;
-    folder: string;
-    filename: string;
+export interface ICard {
     title: string;
-    description: string;
+    icon: string;
+    url: string;
+}
+
+export interface ICardPage {
+    title: string;
+    icon: string;
+    card_content: string;
 }

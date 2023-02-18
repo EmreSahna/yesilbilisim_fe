@@ -1,13 +1,10 @@
-export interface IImage {
-    id: string;
-    filename: string;
-    folder: string;
-}
-
-export interface ITitledImage extends IImage {
+export interface ICard {
     title: string;
+    icon: string;
 }
 
-export interface IDescriptionalImage extends ITitledImage {
-    description: string;
+export interface IHomePage{
+    sliders: string[];
+    companies: string[];
+    cards: ICard[];
 }

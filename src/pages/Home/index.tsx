@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import Slider from "./components/slider";
 import HomeService from "./HomeService";
-import { IImage, ITitledImage } from "./types";
+import { ICard } from "./types";
 
 const Home = () => {
-  const [slider, setSlider] = useState<(IImage)[]>([]);
-  const [companies, setCompanies] = useState<(IImage)[]>([]);
-  const [services, setServices] = useState<(ITitledImage)[]>([]);
+  const [slider, setSlider] = useState<(string)[]>([]);
+  const [companies, setCompanies] = useState<(string)[]>([]);
+  const [services, setServices] = useState<(ICard)[]>([]);
 
   useEffect(() => {
     document.title = "Anasayfa | Yeşil Bilişim";
     HomeService.getHomepage().then((res) => {
-      setServices(res.data.filter((item) => item.folder === "services"));
-      setCompanies(res.data.filter((item) => item.folder === "companies"));
-      setSlider(res.data.filter((item) => item.folder === "carousel"));
+      setCompanies(res.data.companies);
+      setServices(res.data.cards);
+      setSlider(res.data.sliders);
     });
   }, []);
   
@@ -29,26 +29,12 @@ const Home = () => {
               companies.map((item, index) => {
                 return (
                   <li className="lg:w-[15%] lg:p-5 p-3 w-[25%]" key={index}>
-                    <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} alt="" />
+                    <img src={`http://localhost:8080/img/${item}`} alt="" />
                   </li>
                 )
               })
             }
           </ul>
-        </div>
-      </div>
-
-      <div className="bg-main-gray flex md:flex-row flex-col justify-center mt-6 my-[100px] lg:px-12 lg:py-0 py-6 gap-8">          
-        <img src={`http://localhost:8080/img/homepage/ecommerce.jpg`} className="h-auto w-[500px]" alt="" />
-        <div className="text-left my-auto lg:mx-0 mx-4 text-main-black">
-          <h1 className="font-bold text-[36px]">Ürünlerimiz</h1>
-          <p className="text-[14px] text-justify font-medium max-w-[500px]">Müşterilerimize en iyi hizmeti vermeyi amaçlıyoruz ve onların ihtiyaçlarını karşılamaya çalışıyoruz. Lütfen bizimle iletişime geçin ve kaliteli ürünlerimizi keşfedin.</p>
-          <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px] mt-6" type="button">
-            <a href="/urunler" className="flex items-center">
-              <span className="text-[16px] font-semibold">Ürünlerimiz</span>
-              <i className="material-icons-round text-main-black text-[20px] font-semibold ml-1">arrow_forward</i>
-            </a>
-          </button>
         </div>
       </div>
       
@@ -62,7 +48,7 @@ const Home = () => {
                 <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12" key={index}>
                   <div className="shadow-card rounded-lg bg-white h-full pt-4">
                     <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
-                      <img src={`http://localhost:8080/img/${item.folder}/${item.filename}`} className="w-full invert" alt="" />
+                      <img src={`http://localhost:8080/img/${item.icon}`} className="w-full invert" alt="" />
                     </div>
                     <p className="text-black text-[20px] font-bold mt-1 mx-3">{item.title}</p>
                   </div>

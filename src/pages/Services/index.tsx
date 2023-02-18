@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import SolutionService from "./SolutionService";
-import { IDescriptionalImage } from "./types";
+import { ICard } from "./types";
 
 const Services = () => {
-    const [solutions, setSolutions] = useState<IDescriptionalImage[]>([]);
+    const [solutions, setSolutions] = useState<ICard[]>([]);
 
     useEffect(() => {
         document.title = "Çözümlerimiz | Yeşil Bilişim";
@@ -16,7 +16,7 @@ const Services = () => {
     return (
         <>
             <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">
-                <img src="http://192.168.1.169:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
+                <img src="http://localhost:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
                 <ul className="my-4">
                     <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
                     <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>

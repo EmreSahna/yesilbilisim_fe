@@ -1,8 +1,8 @@
 import http from "../../http-common";
-import { IDescriptionalImage } from "./types";
+import { ICard } from "./types";
 
 const getSolutionpage = () => {
-    return http.get<(IDescriptionalImage)[]>('/image/solutionpage');
+    return http.get<(ICard)[]>('/view/services');
 };
 
 const SolutionService = {

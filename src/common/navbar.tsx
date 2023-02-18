@@ -22,9 +22,6 @@ const Navbar = () => {
                 <a href="/hakkimizda">Hakkımızda</a>
             </li>
             <li className="p-2 max-med:hover:bg-transparent rounded-md">
-                <a href="/urunler">Ürünlerimiz</a>
-            </li>
-            <li className="p-2 max-med:hover:bg-transparent rounded-md">
                 <a href="/blog">Blog</a>
             </li>
             <li className="p-2 max-med:hover:bg-transparent rounded-md">

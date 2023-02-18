@@ -15,19 +15,19 @@ const AdminLoginForm = () => {
         password: "",
     });
     
-    const [message, setMessage] = useState("");
+    const [isDone, setIsDone] = useState(false);
 
     const handleSubmit = () => {
         LoginService.loginAdmin(formData)
         .then((res) => {
-            setMessage(res.data.message);
+            setIsDone(true);
             localStorage.setItem("token", res.data.token);
             setTimeout(() => {
                 navigate("/admin/dashboard");
             }, 3000);
         })
         .catch((err) => {
-            setMessage("Kullanıcı adı veya şifre hatalı!");
+            setIsDone(false);
         });
     };
 
@@ -72,9 +72,13 @@ const AdminLoginForm = () => {
                         <i className="material-icons-round text-main-black text-[20px] font-semibold ml-1">login</i>
                     </button>
                 </div>
-                <div className="text-center mt-2">
-                    <span className="text-main-black">{message}</span>
-                </div>
+                {isDone ? (
+                    <div className="text-center mt-2">
+                        <span className="text-main-black">Başarıyla Giriş Yapıldı...</span>
+                    </div>
+                ) : (
+                    <></>
+                )}
             </div>
         </div>
     );

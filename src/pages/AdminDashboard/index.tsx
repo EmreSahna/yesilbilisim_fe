@@ -14,9 +14,12 @@ const AdminDashboard = () => {
             navigate("/admin/login");
         }
 
+        console.log("token have");
+
         const validateToken = async () => {
             try{
                 const response = await DashboardService.validateToken(token);
+                console.log("token have 2");
                 if(!response.data.valid) {
                     localStorage.removeItem("token");
                     navigate("/admin/login");
