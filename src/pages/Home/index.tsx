@@ -47,8 +47,8 @@ const Home = () => {
               return (
                 <div className="w-1/5 p-2 max-small:w-1/2 max-med:w-4/12" key={index}>
                   <a href={`hizmetler/${item.url}`}>
-                    <div className="shadow-card rounded-lg bg-white h-full pt-4">
-                      <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">
+                    <div className="shadow-card rounded-lg bg-white h-full pt-4 group">
+                      <div className="bg-main-blue w-4/12 group-hover:scale-[1.15] transform transition duration-300 p-2 rounded-lg flex justify-center items-center mx-auto">
                         <img src={`http://localhost:8080/img/${item.icon}`} className="w-full invert" alt="" />
                       </div>
                       <p className="text-black text-[20px] font-bold mt-1 mx-3">{item.title}</p>
@@ -94,21 +94,21 @@ const Home = () => {
         <div className="absolute h-full w-[6px] bg-main-blue left-1/2 translate-x-[-50%] rounded-lg max-med:left-[30px] max-small:hidden"></div> 
         <div className="flex justify-start max-med:m-[30px_10px_3px_60px] max-small:m-[10px]">
           <section className="bg-main-blue rounded-md w-[calc(50%_-_40px)] max-med:w-full p-[20px] relative text-main-gray">
-            <i className="material-icons-round right-[-60px] max-med:left-[-50px] top-[35%] absolute bg-main-blue h-[40px] w-[40px] items-center rounded-[50%] leading-[40px] text-[28px] flex justify-center text-main-gray max-small:hidden">thumb_up_alt</i>
+            <i className="material-icons-round right-[-60px] max-med:left-[-50px] top-[35%] absolute bg-main-blue h-[40px] w-[40px] items-center rounded-[50%] leading-[40px] text-[28px] flex justify-center text-main-gray max-small:hidden animate-[scale-rotate_4s_ease-in-out_1s_infinite]">thumb_up_alt</i>
             <h4 className="font-semibold text-[20px]">Kaliteli Hizmet</h4>
             <p className="text-justify">Profesyonel ekibimizle, müşterilerimize en yüksek kaliteli hizmeti sunuyoruz. Tüm hizmetlerimiz garanti kapsamındadır ve müşteri memnuniyetini ön planda tutuyoruz. Ayrıca, hizmetlerimizi sürekli olarak geliştiriyor ve güncelliyoruz, böylece müşterilerimize en iyi hizmeti sunabiliyoruz.</p>
           </section>
         </div>
         <div className="flex justify-end max-med:m-[30px_10px_3px_60px] max-small:m-[10px]">
           <section className="bg-main-blue rounded-md w-[calc(50%_-_40px)] max-med:w-full p-[20px] relative text-main-gray">
-            <i className="material-icons-round left-[-60px] max-med:left-[-50px] top-[35%] absolute bg-main-blue h-[40px] w-[40px] items-center rounded-[50%] leading-[40px] text-[28px] flex justify-center text-main-gray max-small:hidden">shopping_cart</i>
+            <i className="material-icons-round left-[-60px] max-med:left-[-50px] top-[35%] absolute bg-main-blue h-[40px] w-[40px] items-center rounded-[50%] leading-[40px] text-[28px] flex justify-center text-main-gray max-small:hidden animate-[scale-rotate_4s_ease-in-out_2s_infinite]">shopping_cart</i>
             <h4 className="font-semibold text-[20px]">Uygun Fiyat</h4>
             <p className="text-justify">Rakiplerimizle karşılaştırıldığında, hizmet ve ürünlerimizin fiyatları oldukça uygun ve müşterilerimize en iyi değer sunuyoruz. Aynı zamanda, müşterilerimize indirim ve kampanyalar sunuyoruz, böylece daha uygun fiyatlarla hizmet ve ürünlerimizi kullanabiliyorlar.</p>
           </section>
         </div>
         <div className="flex justify-start max-med:m-[30px_10px_3px_60px] max-small:m-[10px]">
           <section className="bg-main-blue rounded-md w-[calc(50%_-_40px)] max-med:w-full p-[20px] relative text-main-gray">
-            <i className="material-icons-round right-[-60px] max-med:left-[-50px] top-[35%] absolute bg-main-blue h-[40px] w-[40px] items-center rounded-[50%] leading-[40px] text-[28px] flex justify-center text-main-gray max-small:hidden">question_mark</i>
+            <i className="material-icons-round right-[-60px] max-med:left-[-50px] top-[35%] absolute bg-main-blue h-[40px] w-[40px] items-center rounded-[50%] leading-[40px] text-[28px] flex justify-center text-main-gray max-small:hidden animate-[scale-rotate_4s_ease-in-out_3s_infinite]">question_mark</i>
             <h4 className="font-semibold text-[20px]">Mükemmel Müşteri Desteği</h4>
             <p className="text-justify">7/24 müşteri desteği sunuyoruz ve müşterilerimizin sorularına anında yanıt veriyoruz. Ayrıca, müşterilerimizin geri bildirimlerini dikkate alıyoruz ve hizmetlerimizi ve ürünlerimizi onların ihtiyaçlarına göre geliştiriyoruz.</p>
           </section>
