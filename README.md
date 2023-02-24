@@ -1,3 +1,9 @@
 # Yesilbilisim front-end app
 
-- Order carousel items
+## Technologies Used
+- ReactJs
+- Axios
+- Typescript
+- React Router DOM
+- React Responsive Carousel
+- Tailwind CSS
