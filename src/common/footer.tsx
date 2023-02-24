@@ -1,35 +1,34 @@
 import { useState } from "react";
 import CommonService from "./CommonService";
 import { IEmail } from "./types";
-
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
 const Footer = () => {
-    const initialEmail = {
-        email: ""
-    };
+    const [submit, setSubmit] = useState<boolean>(false);
 
-    const [submit, setSubmit] = useState(false);
-    const [email, setEmail] = useState<IEmail>(initialEmail);
+    const schema = yup.object().shape({
+        email: yup.string().email("Geçerli bir e-posta adresi giriniz.").required("E-posta adresi boş bırakılamaz."),
+    });
 
-    const sendEmail = () => {
-        CommonService.registerNews(email)
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<IEmail>({
+        resolver: yupResolver(schema),
+    });
+    
+    const onSubmit = (data: IEmail) => {
+        CommonService.registerNews(data)
         .then(res => {
-            console.log(res);
             setSubmit(true);
-            setEmail(initialEmail);
             setTimeout(() => {
                 setSubmit(false);
             }
-            , 5000);
+            , 3000);
         })
         .catch(err => {
             console.log(err);
         });
+        reset();
     };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setEmail({ ...email, [name]: value });
-    }
 
     return (
         <footer className="py-7 bg-main-black">
@@ -83,28 +82,18 @@ const Footer = () => {
                                 <p className="text-main-gray text-sm">Başarıyla bültenimize kayıt oldunuz!</p>
                             </div>
                         ) : (
-                            <div className="items-center flex flex-col justify-center mt-4">
+                            <form onSubmit={handleSubmit(onSubmit)} className="items-center flex flex-col justify-center mt-4">
                                 <div className="flex">
                                     <span className="material-icons-round inline-flex items-center px-2 text-lg text-main-blue bg-main-gray-2 rounded-l-md">
                                         mail
                                     </span>
-                                    <input 
-                                        type="email" 
-                                        className="focus:outline-none bg-main-gray-2 placeholder-main-black p-1 rounded-r-md text-sm" 
-                                        placeholder="example@gmail.com" 
-                                        id="email"
-                                        name="email"
-                                        value={email.email}
-                                        onChange={handleChange}
-                                    />
+                                    <input {...register("email")}
+                                        placeholder="example@gmail.com"
+                                        className="focus:outline-none bg-main-gray-2 placeholder-main-black p-1 rounded-r-md text-sm"/>
                                 </div>
-                                <button 
-                                    className="bg-main-blue px-2 py-1 font-semibold text-white mt-2 rounded-md"
-                                    onClick={sendEmail}
-                                >
-                                        Bültene Kayıt Ol
-                                </button>
-                            </div>
+                                {errors.email && <span className="text-white font-light text-[12px]">{errors.email.message}</span>}
+                                <button type="submit" className="bg-main-blue px-2 py-1 font-semibold text-white mt-2 rounded-md">Bültene Kayıt Ol</button>
+                            </form>
                         )}
                     </div>
                     <div className="w-1/4 px-4 max-med:w-1/2 max-small:w-full max-small:mb-[30px] max-med:mb-[20px]">

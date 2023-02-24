@@ -9,6 +9,17 @@ module.exports = {
       'noto': ['noto_serif_ahom']
     },
     extend: {
+      keyframes: {
+        'scale-rotate': {
+          '0%': {transform: 'scale(1) rotate(0deg)'},
+          '50%': {transform: 'scale(1.25) rotate(25deg)'},
+          '75%': {transform: 'scale(1) rotate(0deg)'},
+          '100%': {transform: 'scale(1) rotate(0deg)'},
+        },
+      },
+      animation: {
+        'scale-rotate': 'scale-rotate 1s linear infinite',
+      },
       screens: {
         'small': '574px',
         'med': '852px',

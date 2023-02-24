@@ -1,39 +1,43 @@
 import { useEffect, useState } from "react";
 import IContactForm from "./types";
 import ContactService from "./ContactService";
-
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
 const Contact = () => {
-    const initialFormData = {
-        fullName: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: ''
-    }
-
-    const [formData, setFormData] = useState<IContactForm>(initialFormData);
     const [submitted, setSubmitted] = useState<boolean>(false);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    }
+    useEffect(() => {
+        document.title = "İletişim | Yeşil Bilişim";
+    }, [])
 
-    const sendForm = () => {
-        ContactService.sendForm(formData)
+    const schema = yup.object().shape({
+        fullName: yup.string().max(30, "Ad/Soyad en fazla 30 karakter içerebilir.").required("Ad Soyad boş bırakılamaz."),
+        email: yup.string().email("Geçerli bir e-posta adresi giriniz.").required("E-posta adresi boş bırakılamaz."),
+        company: yup.string().max(30, "Şirket ismi en fazla 30 karakter içerebilir.").notRequired(),
+        subject: yup.string().max(30, "Konu en fazla 30 karakter içerebilir.").required("Konu boş bırakılamaz."),
+        message: yup.string().max(500, "Mesaj en fazla 500 karakter içerebilir.").required("Mesaj boş bırakılamaz.")
+    });
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<IContactForm>({
+        resolver: yupResolver(schema),
+    });
+    
+    const onSubmit = (data: IContactForm) => {
+        ContactService.sendForm(data)
             .then(() => {
-                setFormData(initialFormData);
                 setSubmitted(true);
+                setTimeout(() => {
+                    setSubmitted(false);
+                }
+                , 5000);
             })
             .catch((e: Error) => {
                 console.log(e);
             }
         );
+        reset();
     };
-
-    useEffect(() => {
-        document.title = "İletişim | Yeşil Bilişim";
-    }, [])
 
     return(
         <>
@@ -49,96 +53,78 @@ const Contact = () => {
                     <div className="flex justify-center mt-4">
                         <span className="text-[16px] text-main-gray-3">En kısa sürede size dönüş yapacağız.</span>
                     </div>
-                    <button className="flex items-center bg-main-black text-white mx-auto py-2 px-6 rounded-xl mt-8" type="button" onClick={() => setSubmitted(false)}>
-                        <span className="text-[16px] font-semibold">Yeni Mesaj Gönder</span>
-                    </button>
                 </div>
             </div>
         ) : (
             <div className="bg-main-blue flex items-center flex-wrap justify-center">
                 <div className="w-5/12 h-min max-small:w-full max-lg:w-10/12 max-med:w-11/12 m-8">
-                    <div className="bg-white shadow-md rounded-xl px-8 py-10 w-8/12 max-med:w-10/12 mx-auto max-small:w-full">
+                    <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded-xl px-8 py-10 w-8/12 max-med:w-10/12 mx-auto max-small:w-full">
                         <div className="mb-4">
                             <label className="block text-main-gray-3 text-sm font-semibold mb-2">
                                 Ad/Soyad *
                             </label>
                             <input 
+                                {...register("fullName")}
                                 className="appearance-none border rounded-md w-full py-3 px-3 text-main-gray-3 leading-tight focus:outline-none" 
-                                type="text" 
-                                id="fullName"
-                                name="fullName"
-                                onChange={handleChange}
-                                value={formData.fullName}
                                 placeholder="örn. Ali Sönmez" 
                             />
+                            {errors.fullName && <span className="text-red-700 font-light text-[12px]">{errors.fullName.message}</span>}
                         </div>
                         <div className="mb-4">
                             <label className="block text-main-gray-3 text-sm font-semibold mb-2">
                                 Mail Adresi *
                             </label>
                             <input 
+                                {...register("email")}
                                 className="appearance-none border rounded-md w-full py-3 px-3 text-main-gray-3 leading-tight focus:outline-none" 
-                                type="text" 
-                                id="email"
-                                name="email"
-                                onChange={handleChange}
-                                value={formData.email}
                                 placeholder="örn. alisonmez@gmail.com" 
                             />
+                            {errors.email && <span className="text-red-700 font-light text-[12px]">{errors.email.message}</span>}
                         </div>
                         <div className="mb-4">
                             <label className="block text-main-gray-3 text-sm font-semibold mb-2">
                                 Şirket İsmi
                             </label>
                             <input 
+                                {...register("company")}
                                 className="appearance-none border rounded-md w-full py-3 px-3 text-main-gray-3 leading-tight focus:outline-none" 
-                                type="text" 
-                                id="company"
-                                name="company"
-                                onChange={handleChange}
-                                value={formData.company}
                                 placeholder="örn. Yesilbilisim" 
                             />
+                            {errors.company && <span className="text-red-700 font-light text-[12px]">{errors.company.message}</span>}
                         </div>
                         <div className="mb-4">
                             <label className="block text-main-gray-3 text-sm font-semibold mb-2">
                                 Konu *
                             </label>
                             <input 
+                                {...register("subject")}
                                 className="appearance-none border rounded-md w-full py-3 px-3 text-main-gray-3 leading-tight focus:outline-none" 
-                                type="text" 
-                                id="subject"
-                                name="subject"
-                                onChange={handleChange}
-                                value={formData.subject}
                                 placeholder="örn. Destek Başvurusu" 
                             />
+                            {errors.subject && <span className="text-red-700 font-light text-[12px]">{errors.subject.message}</span>}
                         </div>
                         <div className="mb-3">
                             <label className="block text-main-gray-3 text-sm font-semibold mb-2">
                                 Mesaj *
                             </label>
                             <textarea 
+                                {...register("message")}
                                 className="appearance-none border rounded-md w-full py-3 px-3 text-main-gray-3 leading-tight focus:outline-none resize-none" 
-                                id="message"
-                                name="message"
                                 rows={6} 
-                                onChange={handleChange}
-                                value={formData.message}
                                 placeholder="örn. Merhabalar. Destek başvurusunda bulunmak istiyorum..." 
                             />
+                            {errors.message && <span className="text-red-700 font-light text-[12px]">{errors.message.message}</span>}
                         </div>
                         <div className="flex justify-center">
                             <button 
-                                className="flex items-center bg-main-blue text-white py-2 px-6 rounded-[10px] mt-6" 
-                                type="button"
-                                onClick={sendForm}
+                                type="submit" 
+                                className="flex items-center bg-main-blue text-white py-2 px-6 rounded-[10px] mt-6"
                             >
                                 <span className="text-[16px] font-semibold">Gönder</span>
                                 <i className="material-icons-round text-main-black text-[20px] font-semibold ml-1">arrow_forward</i>
                             </button>
                         </div>
-                    </div>  
+                    </form>
                 </div>
                 <div className="w-5/12 max-small:w-full max-med:w-10/12 mx-8 my-4">
                     <div className="mb-4">
@@ -170,8 +156,3 @@ const Contact = () => {
 }
 
 export default Contact;
-
-/*
-
-                    
-                    */

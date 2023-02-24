@@ -13,18 +13,18 @@ const Slider = ({slider} : IProps) => {
       showStatus={false} 
       infiniteLoop={true} 
       autoPlay={true} 
-      interval={3000}
+      interval={4000}
       showArrows={false}
       dynamicHeight={true}
       renderIndicator={(onClickHandler, isSelected, index) => {
         if (isSelected) {
             return (
-              <li className='h-[16px] w-[24px] opacity-100 bg-black mx-1 inline-block rounded-[10px]'/>
+              <li className='h-[16px] w-[24px] opacity-100 bg-white mx-1 inline-block rounded-[10px]'/>
             );
         }
         return (
             <li
-              className='h-[16px] w-[16px] opacity-50 bg-black rounded-full mx-1 inline-block'
+              className='h-[16px] w-[16px] opacity-50 bg-white rounded-full mx-1 inline-block'
               onClick={onClickHandler}
               onKeyDown={onClickHandler}
               value={index}
