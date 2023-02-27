@@ -27,8 +27,8 @@ const Blog = () => {
         <>
             <TitleSection title="Blog" />
             
-            <div className="max-w-[1170px] mx-auto flex my-[50px]">
-                <div className="flex flex-col gap-6 w-[75%]">
+            <div className="max-w-[1170px] mx-auto flex my-[50px] max-small:flex-col-reverse max-small:gap-[30px]">
+                <div className="flex flex-col gap-6 w-[75%] max-small:w-full">
                     {posts && 
                         posts.map((blog,index) => {
                             return(
@@ -41,21 +41,21 @@ const Blog = () => {
                                         </a>
                                     </div>
                                     <div className="w-[70%]">
-                                        <h1 className="font-bold text-main-black line-clamp-2 text-[24px]">
+                                        <h1 className="font-bold text-main-black line-clamp-2 text-[24px] max-small:text-[16px]">
                                             <a href={"blog/"+blog.url}>
                                                 {blog.title}
                                             </a>
                                         </h1>
-                                        <hr className="mt-2"/>
-                                        <p className="my-2 line-clamp-4 text-[16px]">
+                                        <hr className="mt-2 max-small:mt-1"/>
+                                        <p className="my-2 max-small:my-1 line-clamp-4 text-[16px] max-small:text-[14px]">
                                             {blog.description}
                                         </p>
                                         <div className="flex justify-between">
                                             <div className="flex items-center gap-[2px] text-main-blue">
-                                                <span className="material-icons-round text-[16px]">schedule</span>
-                                                <p className="text-[14px] font-semibold">{blog.createdDate}</p>    
+                                                <span className="material-icons-round text-[16px] max-small:text-[14px]">schedule</span>
+                                                <p className="text-[14px] font-semibold max-small:text-[12px]">{blog.createdDate}</p>    
                                             </div>
-                                            <button className="text-main-blue font-semibold">
+                                            <button className="text-main-blue font-semibold max-small:text-[14px]">
                                                 <a href={"blog/"+blog.url}>
                                                     Devamını Oku...
                                                 </a>

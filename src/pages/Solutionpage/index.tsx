@@ -32,7 +32,7 @@ const Solutionpage = () => {
     return (
         <>
             <TitleSection title={solution.title} />
-            <div className="my-[50px] max-w-[1170px] mx-auto flex flex-col gap-[30px] text-base text-justify" id="blog-content">
+            <div className="my-[50px] max-w-[1170px] mx-auto flex flex-col gap-[30px] text-base text-justify max-small:mx-[20px]" id="blog-content">
                 <h1 className="text-[24px] text-main-blue font-semibold">{solution.title}</h1>
             </div>
         </>

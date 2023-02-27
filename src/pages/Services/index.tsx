@@ -17,14 +17,14 @@ const Services = () => {
         <>
             <TitleSection title="Hizmetlerimiz" />
             <div className="my-[50px] max-w-[1170px] mx-auto">
-                <div className="my-[50px]">
+                <div className="my-[50px] max-small:px-4">
                     <p className="text-main-blue font-bold text-[32px]">Hizmetlerimiz</p>
                     <p className="text-[18px]">Yeşilbilişim olarak müşterilerimize çeşitli bilişim hizmetleri sunuyoruz.</p>
                 </div>
                 <div className="flex flex-wrap text-center justify-start">
                     {services &&
                         services.map((services) => (
-                            <div className="w-1/5 p-2">
+                            <div className="w-1/5 p-2 max-small:w-[50%] max-med:w-[30%]">
                                 <a href={`hizmetler/${services.url}`}>
                                     <div className="rounded-lg bg-main-gray h-full pt-4 text-main-black">
                                         <div className="bg-main-blue w-4/12 p-2 rounded-lg flex justify-center items-center mx-auto">

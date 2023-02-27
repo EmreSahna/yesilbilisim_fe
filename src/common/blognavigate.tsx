@@ -13,7 +13,7 @@ const BlogNavigate = () => {
     }, []);
 
     return (
-        <div className="w-[25%] px-4">
+        <div className="w-[25%] px-4 max-small:w-full">
             <div className="bg-main-gray py-2 px-1 flex flex-col gap-2">
                 <h1 className="font-semibold text-center text-[20px] text-main-blue">Son Yazılarımız</h1>
                 {blogList && blogList.map((item, index) => (

@@ -60,7 +60,7 @@ const Home = () => {
           }
         </section>
         <p className="font-normal text-[14px] max-w-[1170px] mx-auto text-center">Bu hizmetlerimizin yanı sıra, müşterilerimize özel olarak tasarlanmış paketler de sunmaktayız. Böylece, müşterilerimizin ihtiyaçlarına en uygun hizmetleri sunarak, onların işlemlerini daha da kolaylaştırırız. Eğer siz de en iyi hizmetleri arıyorsanız, şirketimiz ile iletişime geçebilir ve özel hizmetlerimizden yararlanabilirsiniz.</p>
-        <div className="flex justify-center my-2 gap-4">
+        <div className="flex justify-center my-2 gap-4 max-small:mx-2">
           <button className="flex items-center bg-main-blue text-white py-2 px-4 rounded-[10px]" type="button">
             <a href="/hizmetler" className="flex items-center">
               <span className="text-[16px] font-semibold">Hizmetlerimizi İncele</span>
