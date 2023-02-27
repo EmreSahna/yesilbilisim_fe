@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import TitleSection from "../../common/titlesection";
 
 const FAQ = () => {
     useEffect(() => {
@@ -18,15 +19,8 @@ const FAQ = () => {
 
     return (
         <>
-            <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">
-                <img src="http://localhost:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
-                <ul className="my-4">
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block" />
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block" />
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block" />
-                </ul>
-                <p className="text-white font-bold text-[28px]">S.S.S</p>
-            </div>
+            <TitleSection title="S.S.S" />
+
             <div className="max-w-[1170px] mx-auto my-[50px]">
                 <p className="text-[36px] font-bold text-main-black mb-2 text-center">Sıkça Sorulan Sorular</p>
                 <div className="w-full px-4">

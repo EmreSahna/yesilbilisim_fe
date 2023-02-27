@@ -133,17 +133,17 @@ const Home = () => {
           <ul className="flex justify-center gap-12 max-w-[1170px] items-start mx-4 flex-wrap">
             <li className="flex justify-center flex-col w-[30%] max-small:w-full max-med:w-[70%]">
               <span className="material-icons-round rounded-[50%] bg-main-blue text-[50px] text-main-gray p-2 w-fit mx-auto mb-4">vpn_lock</span>
-              <h4 className="text-main-black font-semibold text-[18px] mb-1">Kurumsal Ağlarınız İçin Güvenliğinizi Bizimle Artırın</h4>
+              <h4 className="text-main-black font-semibold text-[18px] mb-1 text-center">Kurumsal Ağlarınız İçin Güvenliğinizi Bizimle Artırın</h4>
               <p className="text-justify text-[14px]">Günümüzde, kurumsal ağların güvenliği önemli bir konudur. Ağınızın güvenliğini bizimle artırmak için, en son teknolojileri kullanarak ağınızı tarayıp, zayıf noktaları tespit eder ve güvenliği arttırmak için gerekli önlemleri alırız. Ağınızın güvenliğini bizimle artırmak için bize bugün ulaşın.</p>
             </li>
             <li className="flex justify-center flex-col w-[30%] max-small:w-full max-med:w-[70%]">
               <span className="material-icons-round rounded-[50%] bg-main-blue text-[50px] text-main-gray p-2 w-fit mx-auto mb-4">terminal</span>
-              <h4 className="text-main-black font-semibold text-[18px] mb-1">Özelleştirilmiş Yazılım Hizmetleri İle İşletmenizi Geliştirin</h4>
+              <h4 className="text-main-black font-semibold text-[18px] mb-1 text-center">Özelleştirilmiş Yazılım Hizmetleri İle İşletmenizi Geliştirin</h4>
               <p className="text-justify text-[14px]">İşletmenizin ihtiyacı olan özelleştirilmiş yazılım hizmetleri için bizimle birlikte çalışın. Uzun yılların deneyimi ile işletmenizin ihtiyacı olan yazılımı kusursuz bir şekilde tasarlamakta ve uygulamaktadır. Bize bugün ulaşın ve işletmenizi en iyi şekilde geliştirmek için özelleştirilmiş yazılım hizmetlerimizi kullanın.</p>
             </li>
             <li className="flex justify-center flex-col w-[30%] max-small:w-full max-med:w-[70%]">
               <span className="material-icons-round rounded-[50%] bg-main-blue text-[50px] text-main-gray p-2 w-fit mx-auto mb-4">inventory</span>
-              <h4 className="text-main-black font-semibold text-[18px] mb-1">Güvenilir ve Kaliteli Ürünlerle İşletmenizi Destekleyin</h4>
+              <h4 className="text-main-black font-semibold text-[18px] mb-1 text-center">Güvenilir ve Kaliteli Ürünlerle İşletmenizi Destekleyin</h4>
               <p className="text-justify text-[14px]">İşletmeniz için gerekli olan güvenilir ve kaliteli ürünleri bizimle satın alın. Uzun yılların deneyimi ile seçtiğimiz ürünler, işletmenizin ihtiyacı olan özellikleri karşılamaktadır. Ayrıca, satın aldığınız ürünler için mükemmel bir müşteri desteği de sunmaktayız. Ürünlerimizi incelemek ve satın almak için bize bugün ulaşın.</p>
             </li>
           </ul>

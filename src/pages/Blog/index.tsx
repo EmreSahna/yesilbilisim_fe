@@ -3,6 +3,7 @@ import BlogService from "./BlogService";
 import { IPost } from "./types";
 
 import BlogNavigate from "../../common/blognavigate";
+import TitleSection from "../../common/titlesection";
 
 const Blog = () => {
     const [posts, setPosts] = useState<IPost[]>([]);
@@ -24,15 +25,8 @@ const Blog = () => {
 
     return (
         <>
-            <div className="h-auto flex justify-center py-6 flex-col items-center bg-main-blue">
-                <img src="http://localhost:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
-                <ul className="my-4">
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
-                </ul>
-                <p className="text-white font-bold text-[28px]">Blog</p>
-            </div>
+            <TitleSection title="Blog" />
+            
             <div className="max-w-[1170px] mx-auto flex my-[50px]">
                 <div className="flex flex-col gap-6 w-[75%]">
                     {posts && 

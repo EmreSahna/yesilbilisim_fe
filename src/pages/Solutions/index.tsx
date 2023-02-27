@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SolutionService from "./SolutionService";
 import { ICard } from "./types";
+import TitleSection from "../../common/titlesection";
 
 const Solutions = () => {
     const [solutions, setSolutions] = useState<ICard[]>([]);
@@ -14,15 +15,7 @@ const Solutions = () => {
     
     return (
         <>
-            <div className="h-auto bg-main-blue flex justify-center py-6 flex-col items-center">
-                <img src="http://localhost:8080/img/logo/logo_2.png" className="h-[100px] mb-2" alt="" />
-                <ul className="my-4">
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
-                    <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block"/>
-                </ul>
-                <p className="text-white font-bold text-[28px]">Çözümlerimiz</p>
-            </div>
+            <TitleSection title="Çözümlerimiz" />
             <div className="my-[50px] max-w-[1170px] mx-auto">
                 <div className="my-[50px]">
                     <p className="text-main-blue font-bold text-[32px]">Çözümlerimiz</p>
