@@ -1,10 +1,7 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import TitleSection from "../../common/titlesection";
 
 const FAQ = () => {
-    useEffect(() => {
-        document.title = "S.S.S | Yeşil Bilişim";
-    }, []);
 
     const toggle = (id: string) => {
         const element = document.getElementById(id);
@@ -19,6 +16,11 @@ const FAQ = () => {
 
     return (
         <>
+            <Helmet>
+                <title>S.S.S | Yeşil Bilişim</title>
+                <meta name="description" content="Sıkça Sorulan Sorular" />
+            </Helmet>
+            
             <TitleSection title="S.S.S" />
 
             <div className="max-w-[1170px] mx-auto my-[50px]">

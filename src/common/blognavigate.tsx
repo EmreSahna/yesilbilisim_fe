@@ -19,8 +19,8 @@ const BlogNavigate = () => {
                 {blogList && blogList.map((item, index) => (
                     <a href={"blog/"+item.url}>
                         <div className="flex font-semibold items-start" key={index}>
-                                <span className="material-icons-round text-[24px] text-main-blue">navigate_next</span>
-                                <p className="line-clamp-2 text-[16px]">{item.title}</p>
+                            <span className="material-icons-round text-[24px] text-main-blue">navigate_next</span>
+                            <p className="line-clamp-2 text-[16px]">{item.title}</p>
                         </div>
                     </a>
                 ))}

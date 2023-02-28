@@ -2,22 +2,26 @@ import { useParams } from "react-router-dom";
 import BlogNavigate from "../../common/blognavigate";
 import { useEffect, useState } from "react";
 import BlogpageService from "./BlogpageService";
-import { IDetailedPost } from "../Blog/types";
 import TitleSection from "../../common/titlesection";
+import { Helmet } from "react-helmet-async";
+import { IPost } from "./types";
 
 const Blogpage = () => {
-    const [post, setPost] = useState<IDetailedPost>({} as IDetailedPost);
+    const [post, setPost] = useState<IPost>({
+        title: "Yükleniyor... | Yeşil Bilişim",
+        description: "Blog sayfası yükleniyor...",
+        blogContent: "",
+        createdDate: "",
+    });
     const { id } = useParams();
     
     useEffect(() => {
         let isDone = false;
 
-
         BlogpageService.getBlogs(id)
         .then(res => {
             if (isDone) return;
             setPost(res.data);
-            document.title = res.data.title +" | Yeşil Bilişim";
         })
 
         return () => {
@@ -41,6 +45,13 @@ const Blogpage = () => {
 
     return (
         <>
+            {post && (
+                <Helmet>
+                    <title>{post.title} | Yeşil Bilişim</title>
+                    <meta name="description" content={post.description} />
+                </Helmet>
+            )}
+
             <TitleSection title={post.title} />
 
             <div className="max-w-[1170px] mx-auto flex my-[50px] max-small:flex-col max-small:gap-[30px] max-small:mx-[20px]">
@@ -58,18 +69,3 @@ const Blogpage = () => {
 }
 
 export default Blogpage;
-
-/*
- <p className="text-[22px] font-noto">{post.blogContent}</p>
-                <ul className="list-disc pl-[1rem]">
-                    <li>liste 1</li>
-                    <li>liste 2</li>
-                    <li>liste 3</li>
-                </ul>
-                <ul className="list-decimal pl-[1rem]">
-                    <li>liste 1</li>
-                    <li>liste 2</li>
-                    <li>liste 3</li>
-                </ul>
-                <p className="text-[16px]"><strong>Reflection</strong>; classları, metodları, interfaceleri, fieldları, vb. özellikleri programımız çalışır haldeyken isimlerini bilmesek bile incelememize ve değiştirmemize yarayan bir Java özelliğidir.</p>
-            */

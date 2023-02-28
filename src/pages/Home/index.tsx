@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Slider from "./components/slider";
 import HomeService from "./HomeService";
 import { ICard } from "./types";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const [slider, setSlider] = useState<(string)[]>([]);
@@ -9,7 +10,6 @@ const Home = () => {
   const [services, setServices] = useState<(ICard)[]>([]);
 
   useEffect(() => {
-    document.title = "Anasayfa | Yeşil Bilişim";
     HomeService.getHomepage().then((res) => {
       setCompanies(res.data.companies);
       setServices(res.data.cards);
@@ -19,6 +19,15 @@ const Home = () => {
   
   return (
     <>
+      <Helmet encodeSpecialCharacters={true}>
+        <title>Anasayfa | Yeşil Bilişim</title>
+        <meta name="description" content="Yeşil Bilişim, Bireysel ve kurumsal şirketlerin bilişim ihtiyaçlarını karşılayan güvenilir bir çözüm ortağıdır." />
+        <meta property="og:title" content="Yeşil Bilişim"/> 
+        <meta property="og:image" content="http://yesilbilisim.net/img/logo/logo.png" />
+        <meta property="og:description" content="Yeşil Bilişim, Bireysel ve kurumsal şirketlerin bilişim ihtiyaçlarını karşılayan güvenilir bir çözüm ortağıdır."/>
+        <meta property="og:type" content="website"/>
+      </Helmet>
+      
       <Slider slider={slider}/>
 
       <div className="my-[50px] flex justify-center items-center" id="is">
@@ -87,7 +96,7 @@ const Home = () => {
             </a>
           </button>
         </div>
-        <img src={`http://localhost:8080/img/homepage/destek.jpg`} className="h-auto w-[500px]" alt="" />
+        <img src={`http://localhost:8080/img/homepage/destek.jpg`} className="h-auto w-[500px]" alt="destek" />
       </div>
 
       <div className="my-[100px] max-w-[1170px] relative text-white mx-auto">
@@ -116,7 +125,7 @@ const Home = () => {
       </div>
 
       <div className="bg-main-gray flex md:flex-row flex-col justify-center my-[100px] lg:px-12 lg:py-0 py-6 gap-8">
-        <img src={`http://localhost:8080/img/homepage/blog.jpg`} className="h-auto w-[500px]" alt="" />
+        <img src={`http://localhost:8080/img/homepage/blog.jpg`} className="h-auto w-[500px]" alt="blog" />
         <div className="text-left my-auto lg:mx-0 mx-4 text-main-black">
           <h1 className="font-bold text-[36px]">Blog'da Okumaya Değer</h1>
           <p className="text-[14px] text-justify font-medium max-w-[500px]">Yeşil bilişim olarak, müşterilerimize faydalı bilgiler sunmayı hedefliyoruz ve onların ihtiyaçlarını karşılamaya çalışıyoruz. Blog yazılarımızı okumaya devam edin ve Yeşil bilişim ile ilgili daha fazla bilgi edinin.</p>

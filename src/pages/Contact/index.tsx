@@ -4,12 +4,9 @@ import ContactService from "./ContactService";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { Helmet } from "react-helmet";
 const Contact = () => {
     const [submitted, setSubmitted] = useState<boolean>(false);
-
-    useEffect(() => {
-        document.title = "İletişim | Yeşil Bilişim";
-    }, [])
 
     const schema = yup.object().shape({
         fullName: yup.string().max(30, "Ad/Soyad en fazla 30 karakter içerebilir.").required("Ad Soyad boş bırakılamaz."),
@@ -41,6 +38,11 @@ const Contact = () => {
 
     return(
         <>
+        <Helmet>
+            <title>İletişim | Yeşil Bilişim</title>
+            <meta name="description" content="İletişim sayfası" />
+        </Helmet>
+        
         {submitted ? (
             <div className="bg-main-blue flex items-center justify-center">
                 <div className="bg-white shadow-md rounded-xl px-16 py-8 my-[200px] max-sm:my-[30px] w-3/12 max-small:w-10/12 max-md:w-8/12 max-lg:w-6/12 max-xl:w-5/12">

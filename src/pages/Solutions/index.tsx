@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import SolutionService from "./SolutionService";
 import { ICard } from "./types";
 import TitleSection from "../../common/titlesection";
+import { Helmet } from "react-helmet";
 
 const Solutions = () => {
     const [solutions, setSolutions] = useState<ICard[]>([]);
 
     useEffect(() => {
-        document.title = "Çözümlerimiz | Yeşil Bilişim";
         SolutionService.getSolutionpage().then((res) => {
             setSolutions(res.data);
         });
@@ -15,6 +15,11 @@ const Solutions = () => {
     
     return (
         <>
+            <Helmet>
+                <title>Çözümlerimiz | Yeşil Bilişim</title>
+                <meta name="description" content="Yeşilbilişim, müşterilerinin ihtiyaçlarını karşılamak amacıyla kaliteli ve güncel çözümler sunmaktadır." />
+            </Helmet>
+
             <TitleSection title="Çözümlerimiz" />
             <div className="my-[50px] max-w-[1170px] mx-auto">
                 <div className="my-[50px] max-small:px-4">

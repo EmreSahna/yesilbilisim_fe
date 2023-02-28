@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import SolutionpageService from "./SolutionpageService";
 import { ISolution } from "./types";
 import TitleSection from "../../common/titlesection";
+import { Helmet } from "react-helmet-async";
 
 const Solutionpage = () => {
     const { id } = useParams();
@@ -11,7 +12,6 @@ const Solutionpage = () => {
     useEffect(() => {
         SolutionpageService.getSolutionpageById(id).then((res) => {
             setSolution(res.data);
-            document.title = res.data.title +" | Yeşil Bilişim";
         });
     }, [id]);
 
@@ -31,6 +31,11 @@ const Solutionpage = () => {
     
     return (
         <>
+            <Helmet>
+                <title>{solution.title} | Yeşil Bilişim</title>
+                <meta name="description" content={solution.title} />
+            </Helmet>
+
             <TitleSection title={solution.title} />
             <div className="my-[50px] max-w-[1170px] mx-auto flex flex-col gap-[30px] text-base text-justify max-small:mx-[20px]" id="blog-content">
                 <h1 className="text-[24px] text-main-blue font-semibold">{solution.title}</h1>

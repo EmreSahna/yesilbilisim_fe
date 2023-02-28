@@ -11,7 +11,7 @@ const TitleSection = ({ title } : IProps) => {
                 <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block max-small:w-[8px] max-small:h-[8px]"/>
                 <li className="h-[16px] w-[16px] bg-white rounded-full mx-2 inline-block max-small:w-[8px] max-small:h-[8px]"/>
             </ul>
-            <p className="text-white font-bold text-[28px] max-small:text-[22px]">{title}</p>
+            <h1 className="text-white font-bold text-[28px] max-small:text-[22px]">{title}</h1>
         </div>
     );
 };
