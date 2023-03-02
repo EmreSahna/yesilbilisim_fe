@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Slider from "./components/slider";
 import HomeService from "./HomeService";
 import { ICard } from "./types";
 import { Helmet } from "react-helmet";
+import SwiperCompanies from "../../common/swiperCompanies";
 
 const Home = () => {
   const [slider, setSlider] = useState<(string)[]>([]);
@@ -16,8 +16,6 @@ const Home = () => {
       setSlider(res.data.sliders);
     });
   }, []);
-  
-      //<Slider slider={slider}/>
 
   return (
     <>
@@ -34,21 +32,9 @@ const Home = () => {
         <img src={`http://localhost:8080/img/carousel/anasayfa_giris.jpg`} alt="" />
       </div>
 
-      <div className="mt-[50px] mb-[100px] flex justify-center items-center" id="is">
-        <div className="max-w-[1170px]">
-          <h1 className="font-bold lg:text-[36px] text-[24px] justify-center flex text-main-blue">İş Ortaklarımız</h1>
-          <ul className="flex items-center justify-center flex-wrap">
-            {companies &&
-              companies.map((item, index) => {
-                return (
-                  <li className="lg:w-[15%] lg:p-5 p-3 w-[25%]" key={index}>
-                    <img src={`http://localhost:8080/img/${item}`} alt="" />
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
+      <div className="mt-[50px] mb-[100px]" id="is">
+        <h1 className="font-bold text-[36px] justify-center flex text-main-blue mb-[20px]">İş Ortaklarımız</h1>
+        <SwiperCompanies slider={companies}/>
       </div>
       
       <div className="mb-[150px] p-5">
@@ -142,6 +128,24 @@ const Home = () => {
 export default Home;
 
 /*
+
+<div className="mt-[50px] mb-[100px] flex justify-center items-center" id="is">
+        <div className="max-w-[1170px]">
+          <h1 className="font-bold lg:text-[36px] text-[24px] justify-center flex text-main-blue">İş Ortaklarımız</h1>
+          <ul className="flex items-center justify-center flex-wrap">
+            {companies &&
+              companies.map((item, index) => {
+                return (
+                  <li className="lg:w-[15%] lg:p-5 p-3 w-[25%]" key={index}>
+                    <img src={`http://localhost:8080/img/${item}`} alt="" />
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+      </div>
+
 <div className="bg-main-gray flex md:flex-row flex-col justify-center my-[100px] lg:px-12 lg:py-0 py-6 gap-8">
         <div className="text-left my-auto lg:mx-0 mx-4">
           <h1 className="font-bold text-[36px]"><span className="text-main-blue">7/24&nbsp;</span>Destek Hattı</h1>
