@@ -7,7 +7,10 @@ import { Helmet } from "react-helmet-async";
 
 const Solutionpage = () => {
     const { id } = useParams();
-    const [solution, setSolution] = useState<ISolution>({} as ISolution);
+    const [solution, setSolution] = useState<ISolution>({
+        title: "",
+        cardContent: "",
+    });
     
     useEffect(() => {
         SolutionpageService.getSolutionpageById(id).then((res) => {

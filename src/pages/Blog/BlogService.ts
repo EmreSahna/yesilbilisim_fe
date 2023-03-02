@@ -1,8 +1,13 @@
 import http from "../../http-common";
-import { IPost } from "./types";
+import { IPost, IPostList } from "./types";
 
-const getBlogs = () => {
-    return http.get<IPost[]>('/blog/id/all');
+const getBlogs = (page?: number) => {
+    return http.get<IPostList>('/blog/id/all', {
+        params: {
+            page: page,
+            size: 8
+        }
+    });
 };
 
 const BlogService = {

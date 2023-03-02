@@ -3,6 +3,8 @@ export interface IEmail {
 }
 
 export interface IBlogNavigator {
+    thumbnailImage: string;
+    createdDate: string;
     url: string;
     title: string;
 }

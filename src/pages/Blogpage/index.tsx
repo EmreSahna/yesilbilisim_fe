@@ -54,8 +54,8 @@ const Blogpage = () => {
 
             <TitleSection title={post.title} />
 
-            <div className="max-w-[1170px] mx-auto flex my-[50px] max-small:flex-col max-small:gap-[30px] max-small:mx-[20px]">
-                <div className="w-[75%] flex flex-col gap-8 max-small:w-full" id="blog-content">
+            <div className="max-w-[1170px] mx-auto flex justify-between my-[50px] max-small:flex-col max-small:gap-[30px] max-small:mx-[20px]">
+                <div className="w-[72.5%] flex flex-col gap-8 max-small:w-full" id="blog-content">
                     <div className="flex items-center text-main-blue gap-[2px]">
                         <p className="material-icons-round text-[16px]">schedule</p>
                         <h2 className="text-[14px] font-semibold">{post.createdDate}</h2>

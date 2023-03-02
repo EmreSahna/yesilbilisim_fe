@@ -13,16 +13,28 @@ const BlogNavigate = () => {
     }, []);
 
     return (
-        <div className="w-[25%] px-4 max-small:w-full">
-            <div className="bg-main-gray py-2 px-1 flex flex-col gap-2">
-                <h1 className="font-semibold text-center text-[20px] text-main-blue">Son Yazılarımız</h1>
+        <div className="w-[25%] max-small:w-full">
+            <div className="bg-white flex flex-col shadow-card rounded-md">
+                <div className="flex items-center m-[12px] gap-3">
+                    <span className="material-icons text-main-blue">rss_feed</span>
+                    <h1 className="font-semibold text-center text-[22px] text-main-blue">Öne Çıkanlar</h1>
+                </div>
+                <div className="border-b-2 border-main-blue"></div>
                 {blogList && blogList.map((item, index) => (
-                    <a href={"blog/"+item.url}>
-                        <div className="flex font-semibold items-start" key={index}>
-                            <span className="material-icons-round text-[24px] text-main-blue">navigate_next</span>
-                            <p className="line-clamp-2 text-[16px]">{item.title}</p>
+                    <>
+                    <a href={"blog/"+item.url} className="m-[20px]">
+                        <div className="flex font-semibold items-center justify-between" key={index}>
+                            <div className="overflow-hidden h-full w-[25%]">
+                                <img src={`http://localhost:8080/img/${item.thumbnailImage}`} className="object-cover w-full h-full" alt="" />
+                            </div>
+                            <div className="w-[65%]">
+                                <p className="text-[16px]">{item.title}</p>
+                                <p className="font-extralight">{item.createdDate}</p>
+                            </div>
                         </div>
                     </a>
+                    <div className="border-b-2 border-main-gray"></div>
+                    </>
                 ))}
             </div>
         </div>

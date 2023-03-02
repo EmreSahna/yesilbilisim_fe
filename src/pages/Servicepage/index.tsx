@@ -7,7 +7,11 @@ import { Helmet } from "react-helmet-async";
 
 const Servicepage = () => {
     const { id } = useParams();
-    const [service, setService] = useState<IService>({} as IService);
+    const [service, setService] = useState<IService>({
+        url: "",
+        title: "",
+        cardContent: "",
+    });
 
     useEffect(() => {
         ServicepageService.getServicepageById(id).then((res) => {

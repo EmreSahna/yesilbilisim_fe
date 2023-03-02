@@ -17,19 +17,16 @@ const Navbar = () => {
             id="navbar"
         >
             <li className="p-2 max-med:hover:bg-transparent rounded-md">
-                <a href="/" className="">Anasayfa</a>
+                <a href="/hizmetler">Hizmetlerimiz</a>
+            </li>
+            <li className="p-2 max-med:hover:bg-transparent rounded-md">
+                <a href="/cozumler">Çözümlerimiz</a>
             </li>
             <li className="p-2 max-med:hover:bg-transparent rounded-md">
                 <a href="/hakkimizda">Hakkımızda</a>
             </li>
             <li className="p-2 max-med:hover:bg-transparent rounded-md">
                 <a href="/blog">Blog</a>
-            </li>
-            <li className="p-2 max-med:hover:bg-transparent rounded-md">
-                <a href="/hizmetler">Hizmetlerimiz</a>
-            </li>
-            <li className="p-2 max-med:hover:bg-transparent rounded-md">
-                <a href="/cozumler">Çözümlerimiz</a>
             </li>
         </ul>
         <div className="flex items-center justify-center h-full max-med:ml-auto">

@@ -40,10 +40,6 @@ const Footer = () => {
                         <ul className="text-main-gray text-sm">
                             <li className="items-center flex my-1">
                                 <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
-                                <a href="/">Anasayfa</a>
-                            </li>
-                            <li className="items-center flex my-1">
-                                <i className="material-icons-round text-main-blue text-sm font-semibold mr-2">arrow_forward_ios</i>
                                 <a href="/hakkimizda">Hakkımızda</a>
                             </li>
                             <li className="items-center flex my-1">
