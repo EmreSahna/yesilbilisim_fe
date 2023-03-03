@@ -11,6 +11,7 @@ function topnavbar() {
                     <i className="material-icons-round text-main-blue text-[16px] flex items-center">phone</i>
                     <p className="text-main-black text-[14px]">+90 549 828 45 01</p>
                 </div>
+                
                 <div className="flex gap-1 mx-2 items-center">
                     <i className="material-icons-round text-main-blue text-[16px] flex items-center">send</i>
                     <p className="text-main-black text-[14px]">info@yesilbilisim.net</p>

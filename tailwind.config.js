@@ -16,9 +16,20 @@ module.exports = {
           '75%': {transform: 'scale(1) rotate(0deg)'},
           '100%': {transform: 'scale(1) rotate(0deg)'},
         },
+        'slide-text':{
+          '0%': { 
+            transform: 'translateY(20px)',
+            opacity: '0'
+          },
+          '100%': {
+            transform: 'translateY(0px)',
+            opacity: '1'
+          },
+        }
       },
       animation: {
         'scale-rotate': 'scale-rotate 1s linear infinite',
+        'slide-text': 'slide-text 2s',
       },
       screens: {
         'small': '574px',

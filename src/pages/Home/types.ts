@@ -5,7 +5,14 @@ export interface ICard {
 }
 
 export interface IHomePage{
-    sliders: string[];
+    blogs: IBlogNavigator[];
     companies: string[];
     cards: ICard[];
+}
+
+export interface IBlogNavigator {
+    thumbnailImage: string;
+    createdDate: string;
+    url: string;
+    title: string;
 }

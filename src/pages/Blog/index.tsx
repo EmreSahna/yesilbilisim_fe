@@ -66,7 +66,7 @@ const Blog = () => {
                     {posts && 
                         posts.map((blog,index) => {
                             return(
-                                <div className="w-[47.5%] shadow-card rounded-md h-[300px]">
+                                <article className="w-[47.5%] shadow-card rounded-md h-[300px]">
                                     <a href={"blog/"+blog.url} className="relative group">
                                         <div className="flex absolute top-0 bg-[rgba(8,112,176,.7)] rounded-br-md rounded-tl-md px-1 z-10">
                                             <div className="flex gap-1 items-center text-white">
@@ -86,7 +86,7 @@ const Blog = () => {
                                             </h1>
                                         </div>
                                     </a>
-                                </div>
+                                </article>
                             )
                         })
                     }

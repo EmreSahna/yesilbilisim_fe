@@ -33,7 +33,7 @@ const SwiperCompanies = ({ slider } : IProps) => {
             }}
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
-            autoplay={{ delay: 7000, disableOnInteraction: false }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
             modules={[Autoplay]}
             className="w-full h-[150px]"
         >
