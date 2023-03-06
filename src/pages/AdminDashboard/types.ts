@@ -7,4 +7,5 @@ export interface ICreateBlog {
     description: string;
     blogContent: string;
     thumbnailImage: string;
+    tags: string;
 }

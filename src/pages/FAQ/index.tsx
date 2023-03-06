@@ -23,29 +23,40 @@ const FAQ = () => {
             
             <TitleSection title="S.S.S" />
 
-            <div className="max-w-[1170px] mx-auto my-[50px]">
+            <div className="max-w-[1170px] mx-auto py-[80px]">
                 <p className="text-[36px] font-bold text-main-black mb-2 text-center">Sıkça Sorulan Sorular</p>
                 <div className="w-full px-4">
                     <div className="w-full border border-solid border-main-gray">
                         <div className="p-[18px] bg-main-blue cursor-pointer flex items-center text-white gap-2" onClick={() => toggle("acc1")}>
                             <i className="material-icons-round">help</i>
                             <p className="font-semibold">
-                                Hangi ürünleri satıyorsunuz?
+                                Hizmet almak istiyorum, nereden başvurabilirim?
                             </p>
                         </div>
                         <div className="overflow-hidden max-h-0 p-[0_18px] ease delay-75 transition-all bg-main-gray text-main-black" id="acc1">
-                            Elektronik ürünler kategorisinde, cep telefonları, tabletler, bilgisayarlar, kamera, televizyon, ev eletroniği gibi ürünler satıyoruz.
+                            Hizmet almak istediğinizde, bizimle iletişime geçebilirsiniz. İletişim formumuza sitemizin "İletişime Geç" sayfasından ulaşabilirsiniz. Ayrıca telefon numaramızdan da bize ulaşabilirsiniz.
                         </div>
                     </div>
                     <div className="w-full border border-solid border-main-gray">
                         <div className="p-[18px] bg-main-blue cursor-pointer flex items-center text-white gap-2" onClick={() => toggle("acc2")}>
                             <i className="material-icons-round">help</i>
                             <p className="font-semibold">
-                                Web tasarım ve geliştirme hizmetleri hakkında bilgi almak istiyorum?
+                                Yazılım ekibiniz hangi teknolojileri kullanıyor?
                             </p>
                         </div>
                         <div className="overflow-hidden max-h-0 p-[0_18px] ease delay-75 transition-all bg-main-gray text-main-black" id="acc2">
-                            Web tasarım ve geliştirme hizmetleri için React.JS, NodeJS, HTML, CSS, Spring, .NET ve WordPress gibi teknolojileri kullanabiliyoruz.
+                            Yazılım geliştirme ekibimiz sizlerin ihtiyaçlarınızı analiz ederek, en uygun teknolojileri kullanıyor.
+                        </div>
+                    </div>
+                    <div className="w-full border border-solid border-main-gray">
+                        <div className="p-[18px] bg-main-blue cursor-pointer flex items-center text-white gap-2" onClick={() => toggle("acc3")}>
+                            <i className="material-icons-round">help</i>
+                            <p className="font-semibold">
+                                Bülteninize abone olmak istiyorum.
+                            </p>
+                        </div>
+                        <div className="overflow-hidden max-h-0 p-[0_18px] ease delay-75 transition-all bg-main-gray text-main-black" id="acc3">
+                            Bültenimize abone olmak için, sitemizin alt kısmında yer alan mail formundan kayıt olabilirsiniz.
                         </div>
                     </div>
                 </div>

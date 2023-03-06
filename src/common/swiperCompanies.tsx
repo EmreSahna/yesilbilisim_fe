@@ -3,9 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper";
+import { ICompanies } from "../pages/Home/types";
 
 interface IProps {
-    slider: string[]
+    slider: ICompanies[]
 }
 
 const SwiperCompanies = ({ slider } : IProps) => {
@@ -41,7 +42,7 @@ const SwiperCompanies = ({ slider } : IProps) => {
                 slider.map((item, index) => {
                     return (
                         <SwiperSlide className="border-main-blue border-l-[1px] items-center !flex" key={index}>
-                            <img src={`http://localhost:8080/img/${item}`} className="max-sm w-[50%] mx-auto h-[50%] object-contain grayscale hover:grayscale-0" alt="" />
+                            <img src={`http://localhost:8080/img/${item.image}`} className="max-sm:w-[50%] mx-auto h-[50%] object-contain grayscale hover:grayscale-0" alt={item.alt} />
                         </SwiperSlide>
                     )
                 })

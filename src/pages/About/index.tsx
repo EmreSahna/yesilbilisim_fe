@@ -1,13 +1,31 @@
+import { useEffect, useState } from "react";
 import TitleSection from "../../common/titlesection";
 import { Helmet } from "react-helmet";
+import loadAllImages from "../../utils/imagepromiser";
+import Loading from "../../common/loading";
 
 const About = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const images = [
+      "about/about_1.jpg",
+      "about/about_2.jpg",
+      "about/about_3.jpg",
+      "logo/logo.png"
+    ];
+    loadAllImages(images).then(() => {
+      setLoading(false);
+    });
+  }, [])
   return (
     <>
       <Helmet>
         <title>Hakkımızda | Yeşil Bilişim</title>
         <meta name="description" content="Yeşil Bilişim, Bireysel ve kurumsal şirketlerin bilişim ihtiyaçlarını karşılayan güvenilir bir çözüm ortağıdır." />
       </Helmet>
+
+      {loading && <Loading />}
 
       <TitleSection title="Hakkımızda" />
 

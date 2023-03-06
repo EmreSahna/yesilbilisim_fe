@@ -60,6 +60,7 @@ const AdminDashboard = () => {
         description: yup.string().required("Açıklama alanı boş bırakılamaz"),
         blogContent: yup.string().max(10000, "10000 karakteri geçemez.").required("Blog içeriği alanı boş bırakılamaz"),
         thumbnailImage: yup.string().required("Thumbnail alanı boş bırakılamaz"),
+        tags: yup.string().required("Tag alanı boş bırakılamaz"),
     });
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm<ICreateBlog>({
@@ -73,7 +74,7 @@ const AdminDashboard = () => {
         }).catch((err) => {
             console.log(err);
         });
-        reset();
+        //reset();
     };
 
     return (
@@ -139,6 +140,16 @@ const AdminDashboard = () => {
                                     className="appearance-none border w-full rounded-md py-3 px-3 text-main-gray-3 leading-tight focus:outline-none"
                                 />
                                 {errors.thumbnailImage && <span className="text-red-700 font-light text-[12px]">{errors.thumbnailImage.message}</span>}
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-main-gray-3 text-sm font-semibold mb-2">
+                                    Tags
+                                </label>
+                                <input 
+                                    {...register("tags")}
+                                    className="appearance-none border w-full rounded-md py-3 px-3 text-main-gray-3 leading-tight focus:outline-none"
+                                />
+                                {errors.tags && <span className="text-red-700 font-light text-[12px]">{errors.tags.message}</span>}
                             </div>
                             <button type="submit" className="bg-main-blue p-2 text-white rounded">
                                 Bloğu Kaydet   

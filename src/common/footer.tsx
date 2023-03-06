@@ -100,9 +100,11 @@ const Footer = () => {
                                 <i className="material-icons-round text-main-blue text-sm mr-2">location_on</i>
                                 İstanbul, Ataşehir
                             </li>
-                            <li className="items-start flex my-1">
+                            <li className="items-center flex my-1">
                                 <i className="material-icons-round text-main-blue text-sm mr-2">phone</i>
-                                +90 534 432 60 01 <br/> +90 549 828 45 01
+                                <div className="w-[52%]">
+                                    <img src="http://localhost:8080/img/tel_beyaz.png" alt="telefon" className="h-full w-full object-contain" />
+                                </div>
                             </li>
                             <li className="items-center flex my-1">
                                 <i className="material-icons-round text-main-blue text-sm mr-2">email</i>
@@ -123,7 +125,7 @@ const Footer = () => {
                                 <a href="https://medium.com/@emre.sahna">Medium</a>
                             </li>
                             <a href="/">
-                                <img src="http://localhost:8080/img/logo/logo.png" className="w-fit my-4 max-small:hidden" alt="" />
+                                <img src="http://localhost:8080/img/logo/logo.png" className="w-fit my-4 max-small:hidden" alt="logo" />
                             </a>
                         </ul>
                     </div>

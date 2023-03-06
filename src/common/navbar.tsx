@@ -12,7 +12,7 @@ const Navbar = () => {
         </a>
         <ul 
             className="flex items-center justify-center text-black font-semibold text-[16px] gap-6
-                max-med:-left-full max-med:absolute max-med:flex-col max-med:top-16 max-med:w-full z-10
+                max-med:-left-full max-med:absolute max-med:flex-col max-med:top-16 max-med:w-full z-[50]
                 max-med:text-center max-med:bg-main-gray-2 max-med:text-main-black max-med:py-2 transition-all duration-500 ease-in-out"  
             id="navbar"
         >

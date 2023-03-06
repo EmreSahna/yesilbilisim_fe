@@ -4,6 +4,7 @@ import ServicepageService from "./ServicepageService";
 import { IService } from "./types";
 import TitleSection from "../../common/titlesection";
 import { Helmet } from "react-helmet-async";
+import Loading from "../../common/loading";
 
 const Servicepage = () => {
     const { id } = useParams();
@@ -12,10 +13,12 @@ const Servicepage = () => {
         title: "",
         cardContent: "",
     });
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         ServicepageService.getServicepageById(id).then((res) => {
             setService(res.data);
+            setLoading(false);
         });
     }, [id]);
 
@@ -40,8 +43,10 @@ const Servicepage = () => {
                 <meta name="description" content={service.title} />
             </Helmet>
 
+            {loading && <Loading/>}
+
             <TitleSection title={service.title} />
-            <div className="my-[50px] max-w-[1170px] mx-auto flex flex-col gap-[30px] text-base text-justify max-small:mx-[20px]" id="blog-content">
+            <div className="py-[80px] max-w-[1170px] mx-auto flex flex-col gap-[30px] text-base text-justify max-small:mx-[20px]" id="blog-content">
                 <h1 className="text-[24px] text-main-blue font-semibold">{service.title}</h1>
             </div>
         </>

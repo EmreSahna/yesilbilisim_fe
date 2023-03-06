@@ -21,20 +21,17 @@ const BlogNavigate = () => {
                 </div>
                 <div className="border-b-2 border-main-blue"></div>
                 {blogList && blogList.map((item, index) => (
-                    <>
-                    <a href={"blog/"+item.url} className="m-[20px]">
-                        <div className="flex font-semibold items-center justify-between" key={index}>
+                    <a href={"http://localhost:3000/blog/"+item.url} className="p-[20px] border-b-2 border-main-gray" key={index}>
+                        <div className="flex font-semibold items-center justify-between">
                             <div className="overflow-hidden h-full w-[25%]">
-                                <img src={`http://localhost:8080/img/${item.thumbnailImage}`} className="object-cover w-full h-full" alt="" />
+                                <img src={`http://localhost:8080/img/${item.thumbnail_image}`} className="object-cover w-full h-full" alt={item.title} />
                             </div>
                             <div className="w-[65%]">
                                 <p className="text-[16px]">{item.title}</p>
-                                <p className="font-extralight">{item.createdDate}</p>
+                                <p className="font-extralight">{item.created_date}</p>
                             </div>
                         </div>
                     </a>
-                    <div className="border-b-2 border-main-gray"></div>
-                    </>
                 ))}
             </div>
         </div>

@@ -3,13 +3,21 @@ import SolutionService from "./ServiceService";
 import { ICard } from "./types";
 import TitleSection from "../../common/titlesection";
 import { Helmet } from "react-helmet";
+import loadAllImages from "../../utils/imagepromiser";
+import Loading from "../../common/loading";
 
 const Services = () => {
     const [services, setServices] = useState<ICard[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [allImages, setAllImages] = useState<string[]>([]);
 
     useEffect(() => {
         SolutionService.getSolutionpage().then((res) => {
             setServices(res.data);
+            allImages.push(...res.data.map((item) => item.icon));
+            loadAllImages(allImages).then(() => {
+                setLoading(false);
+            });
         });
     }, [])
 
@@ -22,7 +30,9 @@ const Services = () => {
 
             <TitleSection title="Hizmetlerimiz" />
 
-            <div className="my-[50px] max-w-[1170px] mx-auto">
+            {loading && <Loading />}
+
+            <div className="pt-[40px] pb-[80px] max-w-[1170px] mx-auto">
                 <div className="my-[50px] max-small:px-4">
                     <p className="text-main-blue font-bold text-[32px]">Hizmetlerimiz</p>
                     <p className="text-[18px]">Yeşilbilişim olarak müşterilerimize çeşitli bilişim hizmetleri sunuyoruz.</p>

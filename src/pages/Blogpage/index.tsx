@@ -5,6 +5,7 @@ import BlogpageService from "./BlogpageService";
 import TitleSection from "../../common/titlesection";
 import { Helmet } from "react-helmet-async";
 import { IPost } from "./types";
+import Loading from "../../common/loading";
 
 const Blogpage = () => {
     const [post, setPost] = useState<IPost>({
@@ -12,8 +13,10 @@ const Blogpage = () => {
         description: "Blog sayfası yükleniyor...",
         blogContent: "",
         createdDate: "",
+        tags: "",
     });
     const { id } = useParams();
+    const [loading, setLoading] = useState<boolean>(true);
     
     useEffect(() => {
         let isDone = false;
@@ -22,6 +25,7 @@ const Blogpage = () => {
         .then(res => {
             if (isDone) return;
             setPost(res.data);
+            setLoading(false);
         })
 
         return () => {
@@ -49,8 +53,11 @@ const Blogpage = () => {
                 <Helmet>
                     <title>{post.title} | Yeşil Bilişim</title>
                     <meta name="description" content={post.description} />
+                    <meta name="keywords" content={post.tags} />
                 </Helmet>
             )}
+
+            {loading && <Loading />}
 
             <TitleSection title={post.title} />
 

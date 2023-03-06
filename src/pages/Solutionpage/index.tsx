@@ -4,6 +4,7 @@ import SolutionpageService from "./SolutionpageService";
 import { ISolution } from "./types";
 import TitleSection from "../../common/titlesection";
 import { Helmet } from "react-helmet-async";
+import Loading from "../../common/loading";
 
 const Solutionpage = () => {
     const { id } = useParams();
@@ -11,10 +12,12 @@ const Solutionpage = () => {
         title: "",
         cardContent: "",
     });
+    const [loading, setLoading] = useState<boolean>(true);
     
     useEffect(() => {
         SolutionpageService.getSolutionpageById(id).then((res) => {
             setSolution(res.data);
+            setLoading(false);
         });
     }, [id]);
 
@@ -39,8 +42,10 @@ const Solutionpage = () => {
                 <meta name="description" content={solution.title} />
             </Helmet>
 
+            {loading && <Loading/>}
+
             <TitleSection title={solution.title} />
-            <div className="my-[50px] max-w-[1170px] mx-auto flex flex-col gap-[30px] text-base text-justify max-small:mx-[20px]" id="blog-content">
+            <div className="py-[80px] max-w-[1170px] mx-auto flex flex-col gap-[30px] text-base text-justify max-small:mx-[20px]" id="blog-content">
                 <h1 className="text-[24px] text-main-blue font-semibold">{solution.title}</h1>
             </div>
         </>

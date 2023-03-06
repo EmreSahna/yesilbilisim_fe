@@ -3,4 +3,5 @@ export interface IPost {
     description: string;
     createdDate: string;
     blogContent: string;
+    tags: string;
 }

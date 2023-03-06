@@ -6,13 +6,18 @@ export interface ICard {
 
 export interface IHomePage{
     blogs: IBlogNavigator[];
-    companies: string[];
+    companies: ICompanies[];
     cards: ICard[];
 }
 
 export interface IBlogNavigator {
-    thumbnailImage: string;
-    createdDate: string;
+    thumbnail_image: string;
+    created_date: string;
     url: string;
     title: string;
+}
+
+export interface ICompanies {
+    image: string;
+    alt: string;
 }

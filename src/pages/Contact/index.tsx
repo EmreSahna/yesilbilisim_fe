@@ -58,7 +58,7 @@ const Contact = () => {
                 </div>
             </div>
         ) : (
-            <div className="bg-main-blue flex items-center flex-wrap justify-center">
+            <div className="bg-main-blue flex items-center flex-wrap justify-center py-[40px]">
                 <div className="w-5/12 h-min max-small:w-full max-lg:w-10/12 max-med:w-11/12 m-8">
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded-xl px-8 py-10 w-8/12 max-med:w-10/12 mx-auto max-small:w-full">
                         <div className="mb-4">
@@ -133,23 +133,20 @@ const Contact = () => {
                         <span className="text-[36px] max-small:text-[26px] font-bold text-white">Bizimle İletişime Geçin</span>
                         <p className="text-white text-[18px] max-small:text-[14px] font-normal">Formu doldurarak bizimle iletişime geçebilir, bizlerden destek alabilirsiniz ayrıca önerilerde bulunabilir, aklınızdaki soruları da sorabilirsiniz.</p>
                     </div>
-                    <div className="bg-white rounded-xl px-4 py-4 mb-8 text-[20px] max-small:text-[12px] w-8/12 mx-auto max-small:w-full">
+                    <div className="bg-white rounded-xl px-4 py-4 mb-8 text-[20px] max-small:text-[16px] w-8/12 mx-auto max-small:w-full">
                         <div className="flex justify-between mb-1">
                             <span className="text-main-black font-bold">Mail Adresimiz</span>
-                            <span className="">info@yesilbilisim.net</span>
+                            <span>info@yesilbilisim.net</span>
                         </div>
                         <hr/>
                         <div className="flex justify-between my-1">
-                            <span className="text-main-black font-bold">Telefon Numaramız - 1</span>
-                            <span className="">+90 534 432 60 01</span>
-                        </div>
-                        <hr/>
-                        <div className="flex justify-between mt-1">
-                            <span className="text-main-black font-bold">Telefon Numaramız - 2</span>
-                            <span className="">+90 549 828 45 01</span>
+                            <span className="text-main-black font-bold">Telefon Numaramız</span>
+                            <div className="w-[35%]">
+                                <img src="http://localhost:8080/img/tel.png" alt="telefon" className="h-full w-full object-contain" />
+                            </div>
                         </div>
                     </div>
-                    <img src="http://localhost:8080/img/contact/contact.png" />
+                    <img src="http://localhost:8080/img/contact.png" alt="iletişim"/>
                 </div>
             </div>
         )}

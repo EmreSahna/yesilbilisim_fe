@@ -1,30 +1,29 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-import Services from "./pages/Services";
-import Blog from "./pages/Blog";
-
 import Topnavbar from "./common/topnavbar";
 import Navbar from "./common/navbar";
 import Footer from "./common/footer";
 import Copyright from "./common/copyright";
-import FAQ from "./pages/FAQ";
-import AdminLoginForm from "./pages/AdminLoginForm";
+import About from "./pages/About";
 import AdminDashboard from "./pages/AdminDashboard";
-import Solutions from "./pages/Solutions";
+import AdminLoginForm from "./pages/AdminLoginForm";
+import Blog from "./pages/Blog";
 import Blogpage from "./pages/Blogpage";
+import FAQ from "./pages/FAQ";
+import NotFound from "./pages/NotFound";
 import Servicepage from "./pages/Servicepage";
+import Services from "./pages/Services";
 import Solutionpage from "./pages/Solutionpage";
+import Solutions from "./pages/Solutions";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
     <>
-      <Routes>
+        <Routes>
         <Route element={<><Topnavbar/><Navbar/><Outlet/><Footer/><Copyright/></>}>
-          <Route path="" element={<Home />} />
+          <Route path="" element={<Home />}/>
           <Route path="hakkimizda" element={<About />} />
           <Route path="iletisim" element={<Contact/>} />
           <Route path="*" element={<NotFound />} /> 
@@ -38,7 +37,7 @@ const App = () => {
         </Route>
         <Route path="admin/login" element={<AdminLoginForm />} />
         <Route path="admin/dashboard" element={<AdminDashboard />} />
-      </Routes>
+        </Routes>
     </>
   );
 }
